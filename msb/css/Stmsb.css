@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#content {
+	margin-left:230px;
+	margin-bottom: 400px;
+}
+
+#insidearticle{
+	padding-left:40px;
+	
+}
+
+<!--vertical menu================-->
+@font-face {
+    font-family: raleway-thin;
+    src: url('../fonts/ralewayc/raleway-regular.eot');
+    src: url('../fonts/ralewayc/raleway-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ralewayc/raleway-regular.woff') format('woff'),
+         url('../fonts/ralewayc/raleway-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cbp-vimenu { 
+  position: fixed; 
+  overflow: hidden; 
+  top: 0; 
+  left: 0; 
+  height: 100%; 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  background: #020529; 
+} 
+
+.cbp-vimenu li a {
+	display: block;
+	/*text-indent: -500em;*/
+	height: 70px;
+	width: 230px;
+	/* [disabled]line-height: 20px; */
+	text-align: center;
+	color: #f9e9ff;
+	padding-top: 10px;
+	position: relative;
+	border-bottom: 1px solid rgba(0,255,0,0.05);
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	transition: background 0.1s ease-in-out;
+	min-height: 0px;
+	font-family: raleway-thin, "Helvetica Neue", Helvetica, Arial, sans-serif ; 
+} 
+
+.cbp-vimenu li:first-child a{
+	/* [disabled]padding-top:20px; */
+} 
+.cbp-vimenu li a:hover {
+	background: #062260;
+	color: #e3f801;
+	text-decoration: none;
+} 
+
+/* класс активного элемента */ 
+.cbp-vimenu li.cbp-vicurrent a {
+	background: #062260;
+	color: #e3f801;
+	-webkit-box-shadow: 0px 0px;
+	box-shadow: 0px 0px;
+} 
+
+.cbp-vimenu li a:before { 
+  font-family: raleway-thin, "Helvetica Neue", Helvetica, Arial, sans-serif  ; 
+  /*speak: none; */
+  font-style: normal; 
+  font-weight: normal; 
+  text-indent: 0em; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  -webkit-font-smoothing: antialiased; 
+} 
+
+.cbp-vimenu li a.icon-logo:before {
+	  background: #f9e9ff; 
+	  color: #e3f801; 
+	  content: "МСБ"; 
+	  font-weight: 700; 
+	  font-size: 300%; 
+	  font-family:raleway-thin, Arial, sans-serif; 
+} 
+
+/* Пример изменения меню для небольших экранов (зависит от общей высоты меню) */ 
+@media screen and (max-height: 34.9375em) { 
+
+  .cbp-vimenu { 
+  font-size: 70%; 
+  } 
+
+}
+
+
+/* Sticky footer styles-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+	 margin-left:0;
+     margin-right:0;
+	 padding-top:15px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 360px;
+  background-color: #f5f5f5;
+}
