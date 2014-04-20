@@ -1,0 +1,33 @@
+Миграции:
+	1) python manage.py schemamigration myapp --initial
+	- оно добавляет django и south таблицы в базу данных.
+	2) python manage.py migrate myapp 
+	- оно добавляет наши таблицы в базу данных.
+	3) python manage.py migrate myapp 0001 --fake
+	- если прикручиваем миграции к уже созданному приложению
+	4) python manage.py schemamigration myapp --auto
+	- запускаем срузу после изменений модели
+	5) python manage.py migrate myapp
+	- применить изменения
+	6) python manage.py migrate --list
+	-список всех миграций (звездочкой помечены те, кторрые применены)
+
+Создать модели на основе базы данных:
+	1) Прикрутить базу в settings.py
+	2) python manage.py inspectdb > models.py
+	- генерит код и сохраняет его в файл
+	3) Добавляем этот файл к нужному приложению
+	4) Если в дальнейшем необходимо менять базу через Django, то ставим
+		managed = True или просто удаляем эту строчку
+	5) python manage.py syncdb
+
+Галерея django-photologue:
+	1) pip install django-photologue
+	2) Добавляем в аппликейшнс 'photologue'
+	3) python manage.py migrate photologue
+	4) https://code.google.com/p/django-photologue/w/list
+	5) https://django-photologue.readthedocs.org/en/2.7/
+
+Установка Mysql 5.6:
+	1) http://opensourcedbms.com/dbms/install-mysql-5-6-ubuntu-13-10-x64-debian-linux/
+	2) если проблемы с сокетом, то смотреть http://stackoverflow.com/questions/11990708/error-cant-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysq
