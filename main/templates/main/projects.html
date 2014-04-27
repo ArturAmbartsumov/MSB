@@ -1,0 +1,10 @@
+Дефолтный шаблон для списка проектов
+{% if projectList %}
+	{% for project in projectList %}
+		<p>---------</p>
+		<p>{{ project.name }}</p>
+		<p>{{ project.department.name }}</p>
+	{% endfor %}
+{% else %}
+    <p>No project are available.</p>
+{% endif %}

@@ -9,6 +9,7 @@ class Departments(models.Model):
 	about = models.TextField(blank=True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
+	template = models.CharField(max_length=50, default='department.html')
 	def __unicode__(self):
 		return self.short_name
 
@@ -19,6 +20,7 @@ class Projects(models.Model):
 	department = models.ForeignKey(Departments, blank=True, null=True, on_delete=models.SET_NULL)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
+	template = models.CharField(max_length=50, default='project.html')
 	def __unicode__(self):
 		return self.short_name
 
@@ -30,6 +32,7 @@ class Articles(models.Model):
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
 	content = RichTextField()
+	template = models.CharField(max_length=50, default='article.html')
 	def __unicode__(self):
 		return self.short_name
 

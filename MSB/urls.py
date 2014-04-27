@@ -10,15 +10,12 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'MSB.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    #url(r'^$', include('main.urls')),
-    url(r'^', include('main.urls', namespace="main")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^photologue/', include('photologue.urls')),
+    url(r'^', include('main.urls', namespace="main")),
 )
-
-
 
 if settings.DEBUG:
 

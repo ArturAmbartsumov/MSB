@@ -1,0 +1,11 @@
+Шаблон для статьи
+{% if article %}
+	<p><img src="{{ article.photo.get_thumbnail_url }}"></p>
+	<p>{{ article.gallery }}</p>
+	{% for photo in article.gallery.public %}
+		<p><img src="{{ photo.get_mySize_url }}"></p>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}

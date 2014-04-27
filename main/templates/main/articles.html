@@ -1,0 +1,11 @@
+Шаблон для списка статей
+{% if articleList %}
+	{% for article in articleList %}
+		{{ article.article }}
+		{{ article.summary|safe }}
+		<li><a href="{% url 'main:article' article.article %}">Читать полностью</a></li>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}

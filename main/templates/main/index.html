@@ -1,3 +1,7 @@
+Шаблон главной страницы
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" />
+
 {% if article %}
 	<p><img src="{{ article.photo.get_thumbnail_url }}"></p>
 	<p>{{ article.gallery }}</p>

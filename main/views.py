@@ -8,12 +8,20 @@ def index(request):
 
 def article(request, article):
 	article = get_object_or_404(Articles, short_name = article)
-	return render(request, 'main/index.html', {'article': article})
+	return render(request, 'main/' + article.template, {'article': article})
+
+def articles(request):
+	articleList = get_list_or_404(ArticleDescriptions)
+	return render(request, 'main/articles.html', {'articleList': articleList})
 
 def department(request, department):
-	return HttpResponse("You're looking at department %s." % department)
+	department = get_object_or_404(Departments, short_name = department)
+	return render(request, 'main/' + department.template, {'department': department})
 
-def project(request, department, project):
-	message = "You're looking at department %s " % department
-	message += "and project %s." % project
-	return HttpResponse(message)
+def project(request, project):
+	project = get_object_or_404(Projects, short_name = project)
+	return render(request, 'main/' + project.template, {'project': project})
+
+def projects(request):
+	projectList = get_list_or_404(Projects)
+	return render(request, 'main/projects.html', {'projectList': projectList})
