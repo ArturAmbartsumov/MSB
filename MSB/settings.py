@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'ckeditor',
     'main',
     'photologue',
-    'testAPP',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,6 +1,5 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from redactor.fields import RedactorField
 from photologue.models import Photo, Gallery
 
 class Departments(models.Model):

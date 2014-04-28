@@ -1,3 +1,21 @@
+Для работы сайта необходимо:
+	Установить пакеты для работы проекта:
+		pip install pillow
+			Библиотека пайтон для работы с картинками
+			На маке проблемы http://stackoverflow.com/questions/22390655/ansible-installation-clang-error-unknown-argument-mno-fused-madd
+		pip install south
+			Для миграций
+		pip install django-photologue
+			Приложение - фотогалерея
+		pip install django-ckeditor-updated
+			Редактор штмл текста для админки
+	Настроить базу данных:
+		Установить мускуль
+		Создать базу данных MSB
+		Создать пользователя admin (пароль "admin")
+		Дать права пользователю admin на базу данных MSB
+		Выполнить python manage.py synkdb
+
 Про статику:
 	http://djbook.ru/rel1.6/intro/tutorial06.html
 	http://djbook.ru/rel1.6/howto/static-files/index.html
