@@ -1,11 +1,12 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from photologue.models import Photo, Gallery
+import datetime
 
 class Departments(models.Model):
 	short_name = models.CharField(max_length=50, unique = True)
 	name = models.CharField(max_length=250)
-	about = models.TextField(blank=True)
+	description = models.TextField(blank=True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
 	template = models.CharField(max_length=50, default='department.html')
@@ -15,7 +16,7 @@ class Departments(models.Model):
 class Projects(models.Model):
 	short_name = models.CharField(max_length=50, unique = True)
 	name = models.CharField(max_length=250)
-	about = models.TextField()
+	description = models.TextField()
 	department = models.ForeignKey(Departments, blank=True, null=True, on_delete=models.SET_NULL)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
@@ -37,6 +38,37 @@ class Articles(models.Model):
 
 class ArticleDescriptions(models.Model):
 	article = models.OneToOneField(Articles)
-	summary = RichTextField()
+	isFavorite = models.BooleanField(default=True)
+	description = RichTextField()
 	def __unicode__(self):
 		return self.article.short_name
+
+class News(models.Model):
+	title = models.CharField(max_length=250)
+	isFavorite = models.BooleanField(default=True)
+	description = models.TextField(blank=True)
+	published = models.DateTimeField(default=datetime.datetime.now())
+	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL)
+	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
+	content = RichTextField()
+	template = models.CharField(max_length=50, default='news.html')
+	def __unicode__(self):
+		return self.title
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
