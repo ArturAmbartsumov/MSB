@@ -67,21 +67,26 @@ class AboutBMSTU(models.Model):
 	nowadays_title = models.CharField(max_length=250)
 	nowadays_text = models.TextField(blank=True)
 	nowadays_photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-	graduate = models.ManyToManyField('Graduates', blank = True)
+	graduates = models.ManyToManyField('Persons', blank = True)
 	tree_title = models.CharField(max_length=250)
 	tree_photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	def __unicode__(self):
 		return self.title
 
-
-class Graduates(models.Model):
+class Persons(models.Model):
 	full_name = models.CharField(max_length=250)
 	text = models.TextField(blank=True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	def __unicode__(self):
 		return self.full_name
 
-
+class Contacts(models.Model):
+	title = models.CharField(max_length=250)
+	photo_map = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
+	contact_information = models.TextField(blank=True)
+	contactees = models.ManyToManyField(Persons, blank = True)
+	def __unicode__(self):
+		return self.title
 
 
 
