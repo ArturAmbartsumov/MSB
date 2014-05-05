@@ -1,25 +1,364 @@
-Шаблон главной страницы
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" />
+<!DOCTYPE html>
+<html lang="en">
 
-{% if article %}
-	<p><img src="{{ article.photo.get_thumbnail_url }}"></p>
-	<p>{{ article.gallery }}</p>
-	{% for photo in article.gallery.public %}
-		<p><img src="{{ photo.get_mySize_url }}"></p>
-	{% endfor %}
-    {{ article.content|safe }}
-{% else %}
-    <p>No article are available.</p>
-{% endif %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Анастасия" >
 
-{% if articleList %}
-	{% for article in articleList %}
-		{{ article.article }}
-		{{ article.summary|safe }}
-		<li><a href="{% url 'main:article' article.article %}">Читать полностью</a></li>
-	{% endfor %}
-    {{ article.content|safe }}
-{% else %}
-    <p>No article are available.</p>
-{% endif %}
+    <title>MSB foundation</title>
+     <link href="../../static/main/css/Custom_styles.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS 
+    <link href="css/bootstrap.css" rel="stylesheet">-->
+    <link href="../../../CSS/bootstrap-3.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+   
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- Page content -->
+        <div class="container-fluid">
+         <div class="container">
+      					  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        						<div class="container">
+          						  <div class="navbar-header">
+          									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            										<span class="sr-only">Toggle navigation</span>
+            										<span class="icon-bar"></span>
+            										<span class="icon-bar"></span>
+            										<span class="icon-bar"></span>
+          									</button>
+        								</div>
+        								<div class="collapse navbar-collapse">
+                  						<ul class="nav navbar-nav">
+                    						<li class="active"><a href="#">Главная</a></li>
+                    							<li class="dropdown"><a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Общественные организации<b class="caret"></b></a>
+                      								<ul class="dropdown-menu">
+                       								<li><a href="#"><strong>Лаборатория социотехнического проектирования</strong></a></li>
+                        								<li><a href="#">Репутационное агентство</a></li>
+                        								<li><a href="#">Бауманские землячества</a></li>
+                        								<li class="divider"></li>
+                        								<li><a href="#">Наши партнеры</a></li>
+                        								<li class="divider"></li>
+                        								<li><a href="#">Сотрудничество</a></li>
+                      								</ul>
+                    							</li>
+                    							<li><a href="atlicles-ALL.html">Новости</a></li>
+                    							<li><a href="projects.html">Проекты</a></li>
+                    							<li><a href="#">Контакты</a></li>
+                   					</ul>
+                   					<!--<form class="navbar-form navbar-left" role="search">
+                    						<div class="form-group">
+                      							<input type="text" class="form-control" placeholder="Search">
+                    						</div>
+                    						<button type="submit" class="btn btn-default">Submit</button>
+                  						</form>-->
+                  						<button type="button" class="btn btn-default navbar-btn btn-danger" data-toggle="modal" data-target="#SignInModal">Присоединяйся</button>
+                                        </div>
+                  				</div>
+            				</nav>      
+        			</div> 	
+        <div class="row ">
+      <!-- Carousel================================================== -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel"  align="center">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="../../static/main/img/drafts/1400.png" alt="First slide" width='100%'>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Добро пожаловать!</h1>
+              <p>Приветственные слова, реклама</p>
+              <p><a class="btn btn-lg btn-danger" href="article.html" role="button" >Присоединяйся!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item" >
+          <img src="../../static/main/img/drafts/1400.png" alt="Second slide" width='100%'>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Новостная сводка</h1>
+              <p>Краткий обзор прошедшего мероприятия связанного с ЛСТП</p>
+              <p><a class="btn btn-lg btn-primary" href="lstp.html" role="button">Читать далее</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../static/main/img/drafts/1400.png" alt="Third slide"  width="100%">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Новость №2.</h1>
+              <p>Краткое описание прошедшего мероприятия</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Дальше</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+        
+        <div class="jumbotron row" align="center">
+            <h1 class="header1">Международное Содружество бауманцев</h1>
+            <p class="lead col-lg-6 col-xs-offset-3" >Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана! При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: <br>
+•	возрождение российской инженерной школы;<br>
+•	повышение роли и статуса российского инженера;<br>
+•	укрепление связей выпускников нашего университета.</p>
+        </div>
+       	
+        
+        <div class="blue-row">
+        <div class="content-header blue-row " align="center">
+                <h1 >
+                    Общественные организации
+                </h1>
+            </div>
+        <div class="row-pad">
+    			<div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                              <img data-src="holder.js/300x200" alt="..."  src="../../static/main/img/drafts/300-200.jpeg">
+                              <div class="caption">
+                                <h3 class="blue-row">Лаборатория социотехнического проектирования</h3>
+                                <p>Рост сложности военной техники требует новых подходов в организации систем ее проектирования, эксплуатации и боевого применения. Наиболее интересным в этом смысле является социотехнический подход. Однако, только лишь повышение сложности  технических систем не обеспечивает эффективности их эксплуатации, если не менять «систему взаимоотношений» машины и человека.</p>
+                                <p><a href="lstp.html" class="btn btn-primary" role="button">Узанать больше</a> <a href="lstp.html" class="btn btn-default" role="button">Присоединиться</a></p>
+                              </div>
+                            </div>
+                          </div>
+                          
+               <div class="col-sm-6 col-md-4">         
+            <div class="thumbnail">
+                              <img data-src="holder.js/300x200" alt="..." src="../../static/main/img/drafts/300-200.jpeg">
+                              <div class="caption">
+                                <h3>Репутационное агентство</h3>
+                                <p>Hаши координаты в регионах. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                                <p><a href="RA.html" class="btn btn-primary" role="button">Узанать больше</a> <a href="#" class="btn btn-default" role="button">Присоединиться</a></p>
+                              </div>
+                            </div>
+                          </div>
+                            
+                               <div class="col-sm-6 col-md-4">         
+            <div class="thumbnail">
+                              <img data-src="holder.js/300x200" alt="..." src="../../static/main/img/drafts/300-200.jpeg">
+                              <div class="caption">
+                                <h3>Бауманские землячества</h3>
+                                <p>YОрганизаторы «Международного Содружества бауманцев» надеются, что в недалеком будущем «Содружество» объединит выпускников Московского технического Университета им. Баумана со всех уголков России, СНГ и дальнего Зарубежья.</p>
+                                <p><a href="buamzem.html" class="btn btn-primary" role="button">Узанать больше</a> <a href="buamzem.html" class="btn btn-default" role="button">Присоединиться</a></p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+            </div>
+            </div>
+            <div class="content-header">
+                <h1>Наши проекты</h1>
+            </div>
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="well">Проекты подведомственные Фонду.<br>
+                        Филигранная бауманская техника «заточки мозга» подарила России Жуковского и Шухова, Королева и Туполева, Лавочкина, Челомея и сотни других великих имен.  Первый космический полет, оборонный щит страны и даже ряд важнейших устройств  в, увы, не нашем, адронном  коллайдере – дело рук и интеллекта наших выпускников.
+Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="well">Проекты подведомственные Фонду.<br>
+                        Филигранная бауманская техника «заточки мозга» подарила России Жуковского и Шухова, Королева и Туполева, Лавочкина, Челомея и сотни других великих имен.  Первый космический полет, оборонный щит страны и даже ряд важнейших устройств  в, увы, не нашем, адронном  коллайдере – дело рук и интеллекта наших выпускников.
+Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. 
+
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Проекты подведомственные Фонду.<br>
+                        Филигранная бауманская техника «заточки мозга» подарила России Жуковского и Шухова, Королева и Туполева, Лавочкина, Челомея и сотни других великих имен.  Первый космический полет, оборонный щит страны и даже ряд важнейших устройств  в, увы, не нашем, адронном  коллайдере – дело рук и интеллекта наших выпускников.
+Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Проекты подведомственные Фонду.<br>
+                        Филигранная бауманская техника «заточки мозга» подарила России Жуковского и Шухова, Королева и Туполева, Лавочкина, Челомея и сотни других великих имен.  Первый космический полет, оборонный щит страны и даже ряд важнейших устройств  в, увы, не нашем, адронном  коллайдере – дело рук и интеллекта наших выпускников.
+Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Проекты подведомственные Фонду.<br>
+                        Филигранная бауманская техника «заточки мозга» подарила России Жуковского и Шухова, Королева и Туполева, Лавочкина, Челомея и сотни других великих имен.  Первый космический полет, оборонный щит страны и даже ряд важнейших устройств  в, увы, не нашем, адронном  коллайдере – дело рук и интеллекта наших выпускников.
+Последние два десятка лет Бауманка решала одну насущную задачу – выжить.  Но сегодня, вновь востребовано умение делать реальное дело и говорить на языке технологий. Модернизация страны из модного словечка превратилась в необходимое условие ее выживания. </p>
+                    </div>
+                </div>
+            </div>
+        
+
+
+    <div class="row">
+  	<div id="footer">
+      <div class="container footer">
+      
+      <div class="row">
+ 		 <div class="col-md-3">
+         	<div class="panel panel-default">
+        		<div class="panel-heading">
+    					<h3 class="panel-title"><span class="glyphicon glyphicon-star"></span> Партнеры</h3>
+                </div>
+  				<div class="panel-body">
+                <a href="#" class="thumbnail">
+                        <img alt="..." src="img/banners/mailruLogo.gif" >
+                </a>             
+  				</div>
+			</div>
+       </div>
+  		<div class="col-md-5">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-envelope"></span> Контакты</h3>
+                 </div>
+                  <div class="panel-body">
+                        <ul class="list-group">
+                          <li class="list-group-item"> +7-9876-54321</li>
+                          <li class="list-group-item"> 8(1038) 456-234</li>
+                          <li class="list-group-item"> e-mail@mail.ru</li>
+                          <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
+                        </ul>
+  					</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+        	<p class="text-muted">Place sticky footer content here.
+        	
+Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts.
+
+Introduction
+Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the</p>
+			</div>
+            </div>
+      </div><!-- /.conteainer within the footer -->
+    </div><!-- /.footer -->
+    </div>	
+    
+    </div></div>
+    
+    <!-- SIGN IN Modal -->
+    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Форма регистрации для...</h4>
+                      </div>
+                     
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  ...выпускника
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+              
+              <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>  
+                
+                <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  ...участника проекта
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+              </div>
+            <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  ...инвестора
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mail@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>  
+                
+                <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+            
+            </div>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../../static/main/js/jquery-1.10.2.js"></script>
+    <script src="../../static/main/js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

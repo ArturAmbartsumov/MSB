@@ -1,33 +1,68 @@
 /*Custom variables*/
-@brand-font: 'Oswald',sans-serif;
+@brand-font: 'roboto',sans-serif;
+@brand-font-med: 'roboto_medium',sans-serif;
 
 /*Bootstrap variables*/
-@brand-primary: #29c5e6;
-@panel-bg: #f3f3f3;
+@brand-primary: #e3f801;
+@panel-bg: #f3f3f3;/* leave! */
+@brand-info: #1480bc;
+
+@brand-danger: #D6015E;
+/*COLORS
+@gray-darker: #020529;
+@gray-dark: #020529;
+@gray: #062260;
+@gray-light: #062260;*/
+
+@blue: #1480bc;
+@blue-dark: darken(#1480bc, 30%);
+@dr-blue: #020529;
+@white: #f9e9ff;
+
+@text-color: #8f8f8f;/*основной цвет текста на странице*/
+
+/*цвет рамки панелей*/
 @panel-inner-border: #e7e7e7;
-@grid-columns: 24;
-@body-bg: #f8f8f8;
+@body-bg: @white;
 @border-radius-base: 0;
+@badge-border-radius: 0;
+@border-radius-large: 0;
+@border-radius-small: 0;
+
 @btn-primary-bg: @brand-primary;
-@container-md: 960px;
+@container-md: 1000px;
 @container-lg: @container-md;
 @font-family-base: Tahoma, sans-serif;
+
 @font-size-base: 12px;
 @input-bg: @panel-bg;
 @input-border: @panel-inner-border;
 @input-color: #b2b2b2;
-@text-color: #8f8f8f;
+
+/*высота навигационного меню*/
 @navbar-height: 37px;
+
+/*задаем  побольше горизонтальный отступ*/
 @nav-link-padding: 10px 30px;
-@navbar-default-bg: @panel-bg;
+
+/*фон для пунктов меню*/
+@navbar-default-bg: @white;
+
+/*цвет текста в пунктах меню*/
 @navbar-default-link-color: #b2b2b2;
-@navbar-default-link-hover-color: @navbar-default-link-color;
+
+/*и при наведении мышки – серый*/
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-link-hover-bg:#b2b2b2;
+
+/*фон активного пункта меню – наш специфический голубой цвет*/
 @navbar-default-link-active-bg: @brand-primary;
+
+/*цвет текста активного пункта меню*/
 @navbar-default-link-active-color: #fff;
-@list-group-bg: @panel-bg;
-@list-group-border: @panel-inner-border;
-@panel-primary-border: @panel-inner-border;
-@jumbotron-bg: @brand-primary;
+
+@jumbotron-bg: @white;
 @jumbotron-color: #fff;
+
 @thumbnail-padding: 1px;
 @thumbnail-border: #c9c9c9;

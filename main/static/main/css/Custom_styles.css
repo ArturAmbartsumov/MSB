@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto_medium';
+    src: url('../fonts/Roboto_medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
