@@ -3,6 +3,8 @@ from ckeditor.fields import RichTextField
 from photologue.models import Photo, Gallery
 import datetime
 
+#http://djbook.ru/rel1.6/ref/models/fields.html
+
 class Departments(models.Model):
 	short_name = models.CharField(max_length=50, unique = True)
 	name = models.CharField(max_length=250)

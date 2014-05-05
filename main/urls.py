@@ -18,5 +18,5 @@ urlpatterns = patterns('',
 
     #News
     url(r'^news/all/$', views.newsList, name='newsList'),
-	url(r'^news/(?P<news_id>\w+)/$', views.news, name='news'),
+	url(r'^news/(?P<news_id>\d+)/$', views.news, name='news'),
 )

@@ -32,7 +32,7 @@ def projectList(request):
 	#return render(request, 'main/projects.html', {'projectList': projectList})
 	return render(request, 'main/projects.html')
 
-def news(request, project):
+def news(request, news_id):
 	#project = get_object_or_404(Projects, short_name = project)
 	#return render(request, 'main/' + project.template, {'project': project})
 	return render(request, 'main/news.html')
