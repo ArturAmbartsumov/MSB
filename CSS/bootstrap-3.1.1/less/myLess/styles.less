@@ -7,9 +7,57 @@ p {
 }
 
 .btn {
-	font-family: @brand-font;
+	font-family: @brand-font-med;
 }
+.navbar{
+	font-size: 14px;
+	font-family: @brand-font-med;
+	text-transform: uppercase;
+	}
+.row-pad { padding:30px;}
+ .jumbotron {
+            border-radius: 0;
+            padding: 30px;
+            margin: 0;
+			font-family: @brand-font;
+			p {
+				font: 300  @blue;
+				font-size: 22px;
+				margin-bottom: 0;
+				color: @blue;
+                }
+				h1 {
+					text-transform: uppercase;
+					color: @blue;
+					padding: 30px;
+				}
+				h2 {
+					color: @dr-blue;
+					}
 
+                small {
+                    text-align: right;
+                    color: #1D8EA6;
+                    font: 300 20px;
+
+                    &:before {
+                      content: '';
+                    }
+                }
+	
+.blue-row {
+	background-color: @blue;
+}
+.modal-dialog {
+	 font: 14px;
+	 font-family: @brand-font;
+	 }
+.panel-heading {
+      font: 14px @brand-font;
+      text-transform: uppercase;
+      padding: 10px;
+	  background: @brand-primary;
+  }
 .panel {
   box-shadow: none;
 
@@ -23,11 +71,15 @@ p {
       padding: 10px;
   }
 }
+.carousel {
+  height: 500px;
+  .item {
+	  height: 500px;
+	  background-color: #777;
+  }
+}
 
 body {
-  	background-image: url(../images/bg.png);
-	border-top: 5px solid #7e7e7e;
-
 	.wrapper {
 		padding: 0 0 50px 0;
 
@@ -160,7 +212,7 @@ body {
 
 	  	.container {
 			height: 110px;
-			padding: 10px 0;
+			/*padding: 10px 0;*/
 
 			h3 {
 			  	border-bottom: 1px solid #919191;
@@ -252,6 +304,7 @@ body {
 			  	margin-top: 20px;
 			  	font-size: 10px;
 			  	text-align: right;
+			}
 
 			  	a {
 					text-decoration: underline;

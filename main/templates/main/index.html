@@ -8,21 +8,22 @@
     <meta name="author" content="Анастасия" >
 
     <title>MSB foundation</title>
+     <link href="../../static/main/css/Custom_styles.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS 
     <link href="css/bootstrap.css" rel="stylesheet">-->
     <link href="../../../CSS/bootstrap-3.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Add custom CSS here-->
-    <link href="../../static/main/css/simple-sidebar.css" rel="stylesheet"> 
+    <!-- Add custom CSS here -->
+   
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
 <!-- Page content -->
-        <div class="container-fluid myconainer">
+        <div class="container-fluid">
          <div class="container">
-      					  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      					  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         						<div class="container">
           						  <div class="navbar-header">
           									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,7 +38,7 @@
                     						<li class="active"><a href="#">Главная</a></li>
                     							<li class="dropdown"><a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Общественные организации<b class="caret"></b></a>
                       								<ul class="dropdown-menu">
-                       								<li><a href="#">Лаборатория социотехнического проектирования</a></li>
+                       								<li><a href="#"><strong>Лаборатория социотехнического проектирования</strong></a></li>
                         								<li><a href="#">Репутационное агентство</a></li>
                         								<li><a href="#">Бауманские землячества</a></li>
                         								<li class="divider"></li>
@@ -50,13 +51,14 @@
                     							<li><a href="projects.html">Проекты</a></li>
                     							<li><a href="#">Контакты</a></li>
                    					</ul>
-                   					<form class="navbar-form navbar-left" role="search">
+                   					<!--<form class="navbar-form navbar-left" role="search">
                     						<div class="form-group">
                       							<input type="text" class="form-control" placeholder="Search">
                     						</div>
                     						<button type="submit" class="btn btn-default">Submit</button>
-                  						</form>
-                  						<button type="button" class="btn btn-default navbar-btn btn-danger" data-toggle="modal" data-target="#SignInModal">Присоединяйся!</button></div>
+                  						</form>-->
+                  						<button type="button" class="btn btn-default navbar-btn btn-danger" data-toggle="modal" data-target="#SignInModal">Присоединяйся</button>
+                                        </div>
                   				</div>
             				</nav>      
         			</div> 	
@@ -105,30 +107,27 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
         
-        <div class="jumbotron" align="center">
-            <h1 class="header1"><a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>Международное Содружество бауманцев</h1>
-            <h2>Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана!</h2>
-            <p class="lead">При нашей Альма-матер создан некоммерческий фонд «Международный СОЮЗ БАУМАНЦЕВ» основные цели которого: <br>
+        <div class="jumbotron row" align="center">
+            <h1 class="header1">Международное Содружество бауманцев</h1>
+            <p class="lead col-lg-6 col-xs-offset-3" >Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана! При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: <br>
 •	возрождение российской инженерной школы;<br>
 •	повышение роли и статуса российского инженера;<br>
-•	укрепление связей выпускников нашего университета. <br>
-									</p>
-            <p><a class="btn btn-lg btn-success" href="#" role="button">Присоединяйся сегодня</a></p>
-          </div>
+•	укрепление связей выпускников нашего университета.</p>
+        </div>
        	
         
-        
-        <div class="content-header" align="center">
+        <div class="blue-row">
+        <div class="content-header blue-row " align="center">
                 <h1 >
                     Общественные организации
                 </h1>
             </div>
-        <div class="row inset">
+        <div class="row-pad">
     			<div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
                               <img data-src="holder.js/300x200" alt="..."  src="../../static/main/img/drafts/300-200.jpeg">
                               <div class="caption">
-                                <h3>Лаборатория социотехнического проектирования</h3>
+                                <h3 class="blue-row">Лаборатория социотехнического проектирования</h3>
                                 <p>Рост сложности военной техники требует новых подходов в организации систем ее проектирования, эксплуатации и боевого применения. Наиболее интересным в этом смысле является социотехнический подход. Однако, только лишь повышение сложности  технических систем не обеспечивает эффективности их эксплуатации, если не менять «систему взаимоотношений» машины и человека.</p>
                                 <p><a href="lstp.html" class="btn btn-primary" role="button">Узанать больше</a> <a href="lstp.html" class="btn btn-default" role="button">Присоединиться</a></p>
                               </div>
@@ -157,6 +156,7 @@
                             </div>
                           </div>
                       </div>
+            </div>
             </div>
             <div class="content-header">
                 <h1>Наши проекты</h1>
@@ -251,39 +251,96 @@ Grid systems are used for creating page layouts through a series of rows and col
     <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Форма регистрации</h4>
-          </div>
-          <div class="modal-body">
-          
-            <div class="input-group">
-                  <span class="input-group-addon">e-mail @</span>
-                  <input type="text" class="form-control" placeholder="Username">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Форма регистрации для...</h4>
+                      </div>
+                     
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  ...выпускника
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+              
+              <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
                 </div>
                 
               <div class="input-group">
-                  <span class="input-group-addon">@</span>
+                  <span class="input-group-addon">Username</span>
                   <input type="text" class="form-control" placeholder="Username">
                 </div>  
                 
                 <div class="input-group">
-  <span class="input-group-addon">@</span>
-  <input type="text" class="form-control" placeholder="Username">
-</div>
-
-<div class="input-group">
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control">
-  <span class="input-group-addon">.00</span>
-</div>
-                
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
           </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  ...участника проекта
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+              </div>
+            <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  ...инвестора
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mail@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>  
+                
+                <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+            
+            </div>
+            </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
             <button type="button" class="btn btn-primary">Зарегистрироваться</button>
