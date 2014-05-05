@@ -1,0 +1,74 @@
+Шаблон для статьи
+{% if article %}
+	<p><img src="{{ article.photo.get_thumbnail_url }}"></p>
+	<p>{{ article.gallery }}</p>
+	{% for photo in article.gallery.public %}
+		<p><img src="{{ photo.get_mySize_url }}"></p>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}
+
+Шаблон для списка статей
+{% if articleList %}
+	{% for article in articleList %}
+		{{ article.article }}
+		{{ article.summary|safe }}
+		<li><a href="{% url 'main:article' article.article %}">Читать полностью</a></li>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}
+
+Дефолтный шаблон для раздела
+{% if department %}
+    <p>{{ department.name }}</p>
+{% else %}
+    <p>No department are available.</p>
+{% endif %}
+
+Шаблон главной страницы
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" />
+
+{% if article %}
+	<p><img src="{{ article.photo.get_thumbnail_url }}"></p>
+	<p>{{ article.gallery }}</p>
+	{% for photo in article.gallery.public %}
+		<p><img src="{{ photo.get_mySize_url }}"></p>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}
+
+{% if articleList %}
+	{% for article in articleList %}
+		{{ article.article }}
+		{{ article.summary|safe }}
+		<li><a href="{% url 'main:article' article.article %}">Читать полностью</a></li>
+	{% endfor %}
+    {{ article.content|safe }}
+{% else %}
+    <p>No article are available.</p>
+{% endif %}
+
+Дефолтный шаблон для списка проектов
+{% if projectList %}
+	{% for project in projectList %}
+		<p>---------</p>
+		<p>{{ project.name }}</p>
+		<p>{{ project.department.name }}</p>
+	{% endfor %}
+{% else %}
+    <p>No project are available.</p>
+{% endif %}
+
+Дефолтный шаблон для проекта
+{% if project %}
+    <p>{{ project.name }}</p>
+{% else %}
+    <p>No project are available.</p>
+{% endif %}

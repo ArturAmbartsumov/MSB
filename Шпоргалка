@@ -19,6 +19,7 @@
 						   - python manage.py migrate main
 		Проверить выполнились ли все миграции (все должны быть помечены звездочкой)
 			- python manage.py migrate --list
+W10bau5manZ3
 
 Про статику:
 	http://djbook.ru/rel1.6/intro/tutorial06.html
