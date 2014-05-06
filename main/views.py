@@ -2,9 +2,12 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse
 from main.models import *
 
+#http://djbook.ru/rel1.6/topics/db/queries.html
+
 def index(request):
 	#articleList = get_list_or_404(ArticleDescriptions)
 	#return render(request, 'main/index.html', {'articleList': articleList})
+	lastNews = get_list_or_404(News)
 	return render(request, 'main/index.html')
 
 def article(request, article):

@@ -32,7 +32,6 @@
 						   - python manage.py migrate main
 		Проверить выполнились ли все миграции (все должны быть помечены звездочкой)
 			- python manage.py migrate --list
-W10bau5manZ3
 
 Про статику:
 	http://djbook.ru/rel1.6/intro/tutorial06.html
@@ -54,6 +53,10 @@ W10bau5manZ3
 	- применить изменения
 	6) python manage.py migrate --list
 	-список всех миграций (звездочкой помечены те, кторрые применены)
+
+Про удаленный доступ к серверу:
+	1) http://forum.altlinux.org/index.php?topic=9175.0
+	- описано много всяких способов
 
 Создать модели на основе базы данных:
 	1) Прикрутить базу в settings.py
