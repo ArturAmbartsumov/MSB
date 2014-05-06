@@ -10,10 +10,11 @@
     <title>MSB foundation</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    {% load staticfiles %}
+    <link href={% static 'main/css/bootstrap.min.css' %} rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href={% static 'main/css/simple-sidebar.css' %} rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
@@ -179,8 +180,8 @@ Grid systems are used for creating page layouts through a series of rows and col
     </div>
 
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src={% static 'main/js/jquery.min.js' %}></script>
+    <script src={% static 'main/js/bootstrap.min.js' %}></script>
 
     <!-- Custom JavaScript for the Menu Toggle -->
     <script>

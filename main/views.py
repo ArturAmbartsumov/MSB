@@ -10,7 +10,7 @@ def index(request):
 def article(request, article):
 	#article = get_object_or_404(Articles, short_name = article)
 	#return render(request, 'main/' + article.template, {'article': article})
-	if article == '':
+	if article == 'article':
 		return render(request, 'main/article.html')
 	return render(request, 'main/article.html')
 
