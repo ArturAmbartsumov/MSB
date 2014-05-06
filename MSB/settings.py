@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     'photologue',
 )
 
-SITE_ID = 2
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
