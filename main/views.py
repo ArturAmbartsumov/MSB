@@ -17,7 +17,7 @@ def index(request):
 		'contacts': contacts
 	}
 
-	return render(request, 'main/index.html', context)
+	return render(request, 'main/base_index.html', context)
 	#return render(request, 'main/gallerie.html')
 
 def article(request, article):
@@ -28,7 +28,7 @@ def article(request, article):
 		'contacts': contacts
 	}
 	if article == 'article':
-		return render(request, 'main/article.html', context)
+		return render(request, 'main/base_article.html', context)
 	return render(request, 'main/article.html', context)
 
 def articleList(request):
@@ -37,7 +37,7 @@ def articleList(request):
 		'articlesList': articlesList,
 		'contacts': contacts
 	}
-	return render(request, 'main/articles.html', articlesList)
+	return render(request, 'main/base_articles.html', articlesList)
 
 def department(request, department):
 	cur_department = get_object_or_404(Departments, short_name = department)
@@ -66,7 +66,7 @@ def project(request, project):
 		'contacts': contacts
 	}
 	if project == '':
-		return render(request, 'main/project.html')
+		return render(request, 'main/base_project.html')
 	return render(request, 'main/project.html', context)
 
 def projectList(request):

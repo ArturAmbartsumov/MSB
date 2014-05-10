@@ -1,0 +1,40 @@
+{% block foot%}
+<div class="row">
+  <div id="footer">
+    <div class="container footer">  
+      <div class="row">
+        <div class="col-md-3">
+         	<div class="panel panel-default">
+        		<div class="panel-heading">
+    					<h3 class="panel-title"><span class="glyphicon glyphicon-star"></span> Партнеры</h3>
+            </div>
+  				  <div class="panel-body">
+              <a href="#" class="thumbnail">
+                <img alt="..." src={% static 'main/img/banners/mailruLogo.gif' %} >
+              </a>             
+  				  </div>
+			     </div>
+          </div>
+  		  <div class="col-md-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-envelope"></span> Контакты</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="list-group-item">{{ contacts }}</li>
+                <li class="list-group-item"> 8(1038) 456-234</li>
+                <li class="list-group-item"> e-mail@mail.ru</li>
+                <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
+              </ul>
+  					</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+        	<p class="text-muted">Place sticky footer content here.Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts. Introduction Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock foot%}
