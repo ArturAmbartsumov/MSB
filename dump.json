@@ -1,0 +1,5 @@
+Usage: manage.py dumpdata [options] [appname appname.ModelName ...]
+
+Output the contents of the database as a fixture of the given format (using each model's default manager unless --all is specified).
+
+manage.py: error: --indent option requires an argument
