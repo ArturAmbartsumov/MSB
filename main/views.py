@@ -9,15 +9,15 @@ def index(request):
 	#articleList = get_list_or_404(ArticleDescriptions)
 	#return render(request, 'main/index.html', {'articleList': articleList})
 	#lastNews = get_list_or_404(News, pub_date__lte=datetime.datetime.now(), isFavorite=True).order_by('pub_date')[:5]
-	newsList = News.objects.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
-	departmentsList = Departments.objects.exclude(short_name = 'msb')
-	projectsList = Projects.objects.filter(department__short_name = 'msb')[:5]
-	context = {
-		'newsList': newsList,
-		'departmentsList': departmentsList,
-		'projectsList': projectsList,
-	}
-	return render(request, 'main/index.html', context)
+	#newsList = News.objects.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
+	#departmentsList = Departments.objects.exclude(short_name = 'msb')
+	#projectsList = Projects.objects.filter(department__short_name = 'msb')[:5]
+	#context = {
+	#	'newsList': newsList,
+	#	'departmentsList': departmentsList,
+	#	'projectsList': projectsList,
+	#}
+	return render(request, 'main/index.html')
 
 def article(request, article):
 	#article = get_object_or_404(Articles, short_name = article)
@@ -42,15 +42,15 @@ def articleList(request):
 def department(request, department):
 	#department = get_object_or_404(Departments, short_name = department)
 	#return render(request, 'main/' + department.template, {'department': department})
-	cur_department = get_object_or_404(Departments, short_name = department)
-	projectsList = cur_department.projects_set.all()[:5]
-	articlesList = cur_department.article.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
-	context = {
-		'department': cur_department,
-		'projectsList': projectsList,
-		'articlesList': articlesList
-	}
-	print context
+	#cur_department = get_object_or_404(Departments, short_name = department)
+	#projectsList = cur_department.projects_set.all()[:5]
+	#articlesList = cur_department.article.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
+	#context = {
+	#	'department': cur_department,
+	#	'projectsList': projectsList,
+	#	'articlesList': articlesList
+	#}
+	#print context
 	if department == 'lstp':
 		return render(request, 'main/lstp.html')
 	if department == 'RA':

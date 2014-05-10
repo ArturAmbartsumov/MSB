@@ -12,3 +12,16 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+	font-family: 'Comfortaa-Light';
+	src: url('../fonts/Comfortaa-Light.ttf');
+}
+@font-face {
+	font-family: 'a';
+	src: url('../fonts/azoft-sans.ttf');
+	}
+	
+@font-face {
+	font-family: 'Myr';
+	src: url('../fonts/MyriadPro/MypiadProSemiExtended.ttf');
+	}
