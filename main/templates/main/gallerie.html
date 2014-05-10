@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	    <title>MSB foundation</title>
+	    {% load staticfiles %}
+	    <link rel="stylesheet" type="text/css" href={% static 'main/css/bootstrap.min.css' %} />
+	    <link rel="stylesheet" type="text/css" href={% static 'main/css/gallerie.css' %} />
+	</head>
+
+	<body>
+		<div class="projectsGallerie_project">
+		    <img src={% static 'main/img/земляки.jpg' %}/>
+		    <div class="projectsGallerie_project_text">
+		        <h6>Я - заголовок</h6>
+		        <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+		        <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+		    </div>
+		</div>
+		<div class="projectsGallerie_project">
+		    <img src={% static 'main/img/земляки.jpg' %}/>
+		    <div class="projectsGallerie_project_text">
+		        <h6>Я - заголовок</h6>
+		        <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+		    </div>
+		</div>
+		<div class="projectsGallerie_project">
+		    <img src={% static 'main/img/земляки.jpg' %}/>
+		    <div class="projectsGallerie_project_text">
+		        <h6>Я - заголовок</h6>
+		        <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+		    </div>
+		</div>
+	</body>
+
+	<script src={% static 'main/js/jquery.min.js' %}></script>
+	<script src={% static 'main/js/main.js' %}></script>
+</html>

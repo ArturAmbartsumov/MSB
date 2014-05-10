@@ -33,6 +33,7 @@ class Articles(models.Model):
 	short_name = models.CharField(max_length=50, unique = True)
 	title = models.CharField(max_length=250)
 	subtext = models.CharField(max_length=250, blank = True)
+	author = models.CharField(max_length=250)
 	pub_date = models.DateTimeField(default=datetime.datetime.now())
 	isFavorite = models.BooleanField(default=True)
 	description = RichTextField()
@@ -84,6 +85,8 @@ class Persons(models.Model):
 class Contacts(models.Model):
 	title = models.CharField(max_length=250)
 	photo_map = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
+	phone_number = models.CharField(max_length=250, blank=True)
+	adress = models.CharField(max_length=250, blank=True)
 	contact_information = models.TextField(blank=True)
 	contactees = models.ManyToManyField(Persons, blank = True)
 	def __unicode__(self):
