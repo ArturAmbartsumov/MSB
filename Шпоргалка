@@ -41,15 +41,15 @@
 	!!!ВАЖНО - http://progressors.org.ua/articles/4/ - ВАЖНО!!!
 
 Миграции:
-	1) python manage.py schemamigration myapp --initial
+	1) python manage.py schemamigration main --initial
 	- оно добавляет django и south таблицы в базу данных.
-	2) python manage.py migrate myapp 
+	2) python manage.py migrate main 
 	- оно добавляет наши таблицы в базу данных.
-	3) python manage.py migrate myapp 0001 --fake
+	3) python manage.py migrate main 0001 --fake
 	- если прикручиваем миграции к уже созданному приложению
-	4) python manage.py schemamigration myapp --auto
+	4) python manage.py schemamigration main --auto
 	- запускаем срузу после изменений модели
-	5) python manage.py migrate myapp
+	5) python manage.py migrate main
 	- применить изменения
 	6) python manage.py migrate --list
 	-список всех миграций (звездочкой помечены те, кторрые применены)
