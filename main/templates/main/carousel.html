@@ -7,6 +7,7 @@
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
+      
       {% for v in newsList %}
         {% if v.isFavorite %}
           <div class="item">
@@ -21,6 +22,7 @@
           </div>
         {% end if %}
       {% endfor %}
+
       <div class="item active">
         <img src={% static 'main/img/main.jpg' %} alt="First slide" width='100%'>
         <div class="container">

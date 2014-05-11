@@ -59,7 +59,10 @@
 		  </div>
 		{% endblock menu %}
 
-		{% block content %} {% endblock content %}
+		{% block caruosel %} {% endblock caruosel%}
+		
+			{% block content %} {% endblock content %}
+		
 		
 		{% block footer%}
 			<div class="row">
@@ -108,6 +111,7 @@
 	<!-- JavaScript -->
     <script src={% static 'main/js/jquery.min.js' %}></script>
     <script src={% static 'main/js/bootstrap.min.js' %}></script>
+    <script src={% static 'main/js/customScript.js' %}></script>
 
 </body>
 </html>

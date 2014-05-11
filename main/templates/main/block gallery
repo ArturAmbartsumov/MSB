@@ -1,0 +1,15 @@
+{% block gallery %}
+  <div class="row gallery">
+    {% for v in projectsList %}
+      <div class="col-md-4 imgItem">
+        <div class="projectsGallerie_project thumbnail">
+            <img src={% static 'main/img/земляки.jpg' %}/>
+            <div class="projectsGallerie_project_text">
+              <h6>Я - заголовок</h6>
+              <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>	
+{% endblock gallery %}
