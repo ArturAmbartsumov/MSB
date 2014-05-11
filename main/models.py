@@ -92,6 +92,14 @@ class Contacts(models.Model):
 	def __unicode__(self):
 		return self.title
 
+class Banners(models.Model):
+	name = models.CharField(max_length=250)
+	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
+	url = models.CharField(max_length=250)
+	def __unicode__(self):
+		return self.name
+
+
 
 
 
