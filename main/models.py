@@ -12,20 +12,21 @@ class Departments(models.Model):
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	article = models.ManyToManyField('Articles', blank = True)
-	template = models.CharField(max_length=50, default='department.html')
+	template = models.CharField(max_length=50, default='base_department.html')
 	def __unicode__(self):
 		return self.short_name
 
 class Projects(models.Model):
 	short_name = models.CharField(max_length=50, unique = True)
 	name = models.CharField(max_length=250)
+	isFavorite = models.BooleanField(default=True)
 	description = models.TextField()
 	department = models.ForeignKey(Departments, blank=True, null=True, on_delete=models.SET_NULL)
 	article = models.ManyToManyField('Articles', blank = True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	content = RichTextField()
-	template = models.CharField(max_length=50, default='project.html')
+	template = models.CharField(max_length=50, default='base_project.html')
 	def __unicode__(self):
 		return self.short_name
 
@@ -40,7 +41,7 @@ class Articles(models.Model):
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	content = RichTextField()
-	template = models.CharField(max_length=50, default='article.html')
+	template = models.CharField(max_length=50, default='base_article.html')
 	def __unicode__(self):
 		return self.short_name
 
@@ -53,7 +54,7 @@ class News(models.Model):
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	content = RichTextField()
-	template = models.CharField(max_length=50, default='news.html')
+	template = models.CharField(max_length=50, default='base_news.html')
 	def __unicode__(self):
 		return self.title
 
