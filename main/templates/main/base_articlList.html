@@ -1,0 +1,132 @@
+{% extends "main/base.html" %}
+
+{% block title %} List of the srticles {% endblock title %}
+
+{% block menu%}         
+      <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li ><a href={% url 'main:index'%}>Главная</a></li>
+                <li class="dropdown"><a href={% url 'main:index'%} class="dropdown-toggle" data-toggle="dropdown">Проекты<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href={% url 'main:department' 'lstp'%}><strong>Лаборатория социотехнического проектирования</strong></a></li>
+                    <li><a href={% url 'main:department' 'RA'%}>Репутационное агентство</a></li>
+                    <li><a href={% url 'main:department' 'buamzem'%}>Бауманские землячества</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Наши партнеры</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Сотрудничество</a></li>
+                  </ul>
+                </li>
+                <li class="active"><a href={% url 'main:newsList'%}>Новости</a></li>
+                <li><a href={% url 'main:projectList'%}>Альма матер</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+                                <!--<form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                  </form>
+                                  <button type="button" class="btn btn-default navbar-btn btn-danger" data-toggle="modal" data-target="#SignInModal">Присоединяйся</button>-->
+            </div>
+          </div>
+        </nav>      
+      </div>
+    {% endblock menu %}
+
+{% block caruosel %} {% endblock caruosel%}
+
+{% block hello %}<h1 class="brandHeader">Статьи</h1>{% endblock hello %}
+
+
+{% block parts %} 
+      <div class="row ">
+          <div class="col-lg-10 col-xs-offset-2 thumbnail">
+              <img alt="..." src={% static 'main/img/14.jpg' %}>
+              <div class="caption blog">
+                <div lass="blogtags">
+                  <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+                </div>
+                <h1> <a href=#>Мы обращаемся ко всем выпускникам</a></h1><hr>
+                <p>Возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
+          <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
+                <hr>
+              </div>
+      </div>
+{% endblock parts %}
+
+{% block gallery %}
+          <div class="col-lg-6 col-xs-offset-1">
+              <h3>Heading</h3>
+          <p>возрождение российской инженерной школы; возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
+
+          <h3>Categories</h3>
+
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+
+          <h3>Tags</h3>
+          <p><a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a></p>
+
+          <h3>Recent posts</h3>
+          <div class="row">
+            <hr>
+              <div class="col-xs-8 thumbnail">
+                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
+              </div>
+              <div class="col-lg-10">
+                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
+                <h4>Recent posts</h4>
+              </div>
+               </div>
+              <div class="row">
+
+
+              <hr>
+              <div class="col-xs-8 thumbnail">
+                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
+              </div>
+              <div class="col-lg-10">
+                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
+                <h4>Recent posts</h4>
+              </div>
+               </div>
+
+              <div class="row">
+              <hr>
+              <div class="col-xs-8 thumbnail">
+                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
+              </div>
+              <div class="col-lg-10">
+                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
+                <h4>Recent posts</h4>
+              </div>
+
+
+
+             
+          </div>
+    </div>
+</div>
+
+{% endblock gallery %} {% endblock footer%}
+
+
+{% block footer%}
