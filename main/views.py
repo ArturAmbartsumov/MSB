@@ -6,19 +6,20 @@ import datetime
 #http://djbook.ru/rel1.6/topics/db/queries.html
 
 def index(request):
-	newsList = News.objects.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
+	newsList = News.objects.filter(isFavorite = True).order_by('-pub_date')[:5]
 	departmentsList = Departments.objects.exclude(short_name = 'msb')
 	projectsList = Projects.objects.filter(isFavorite = True)[:10]
+	memorandum = get_object_or_404(Articles, short_name = 'memorandum')
 	bannersList = Banners.objects.all()
 	contacts = get_object_or_404(Contacts)
 	context = {
 		'newsList': newsList,
 		'departmentsList': departmentsList,
 		'projectsList': projectsList,
+		'memorandum': memorandum,
 		'bannersList': bannersList,
 		'contacts': contacts
 	}
-
 	return render(request, 'main/base_index.html', context)
 
 def article(request, article):
