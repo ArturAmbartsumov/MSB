@@ -19,7 +19,7 @@
                 <div class="carousel-caption">
                   <h1>{{ v.title }}</h1>
                   <p>{{ v.description }}</p>
-                  <p><a class="btn btn-lg btn-primary" href={% url 'main:news' v.id %} role="button">Читать далее</a></p>
+                  <p><a class="btn btn-lg btn-info" href={% url 'main:news' v.id %} role="button">Читать далее</a></p>
                 </div>
               </div>
             </div>
@@ -40,9 +40,9 @@
         </div>
         <div class="col-lg-10 col-xs-offset-1">
           <p> Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана!<br><br> При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: </p>
-          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> возрождение российской инженерной школы;</p><hr>
-          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> повышение роли и статуса российского инженера;</p><hr>
-          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> укрепление связей выпускников нашего университета.</p>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> возрождение российской инженерной школы;</p><hr>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> повышение роли и статуса российского инженера;</p><hr>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> укрепление связей выпускников нашего университета.</p>
         </div>
     </div>
 {% endblock hello %}
@@ -60,7 +60,7 @@
             <div class="caption">
               <h3 class="blue-row">{{ v.name }}</h3>
               <p> {{ v.description }}</p>
-              <a href={% url 'main:department' v.short_name %} class="btn btn-primary" role="button">Узанать больше</a>
+              <a href={% url 'main:department' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
             </div>
           </div>
         </div>
@@ -112,13 +112,21 @@
   <img alt="Карты яндекс" src={% static 'main/img/Ya_map.png' %}>
   <div class="brand-footer row">
     <div class="col-md-8">
-      <p><span class="glyphicon glyphicon-tower"></span> Prtner #1</p>
-      <p><span class="glyphicon glyphicon-send"></span> Prtner #2</p>
-      <p><span class="glyphicon glyphicon-leaf"></span> Prtner #3</p>
+      <p><a href=#><span class="glyphicon glyphicon-tower"></span> Prtner #1</p></a>
+      <p><a href=#><span class="glyphicon glyphicon-send"></span> Prtner #2</p></a>
+      <p><a href=#><span class="glyphicon glyphicon-leaf"></span> Prtner #3</p></a>
     </div>
     <div class="col-md-7">
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item">{{ contacts }}</li>
+          <li class="list-group-item"> 8(1038) 456-234</li>
+          <li class="list-group-item"> e-mail@mail.ru</li>
+          <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
+        </ul>
+      </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 foot-brand">
     </div>
 
     <!-- <img width="100%" alt="Карты яндекс" src={% static 'main/img/4.jpg' %}> -->
