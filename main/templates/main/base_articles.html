@@ -1,4 +1,29 @@
-Шаблон для списка статей
+{% extends "main/base.html" %}
+
+{% block title %} List of the srticles {% endblock title %}
+
+
+{% block hello %} 
+
+	
+{% endblock hello %}
+
+
+<div class="row brand">
+      <h1 class="brandHeader">Международное Содружество бауманцев</h1>
+      <h2>то, что мы делаем сегодня, завтра сделает мир лучше</h2>
+        <div class="col-lg-7 col-xs-offset-2 thumbnail">
+					<img alt="..." src={% static 'main/img/Gerb_MGTU_imeni_Baumana.png' %}>
+        </div>
+        <div class="col-lg-10 col-xs-offset-1">
+          <p> Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана!<br><br> При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: </p>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> возрождение российской инженерной школы;</p><hr>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> повышение роли и статуса российского инженера;</p><hr>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> укрепление связей выпускников нашего университета.</p>
+        </div>
+    </div>
+
+
 {% if articleList %}
 	{% for article in articleList %}
 		{{ article.article }}
@@ -9,3 +34,57 @@
 {% else %}
     <p>No article are available.</p>
 {% endif %}
+
+
+
+
+
+
+
+      <h1 class="brandHeader">Международное Содружество бауманцев</h1>
+      <h2>то, что мы делаем сегодня, завтра сделает мир лучше</h2>
+
+      <div class="row ">
+        <div class="col-lg-10 col-xs-offset-2 thumbnail">
+          <img alt="..." src={% static 'main/img/14.jpg' %}>
+
+          <div class="caption blog">
+            <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+            <h1> <a href=#>Мы обращаемся ко всем выпускникам</a></h1>
+            <p><hr>Возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
+
+            <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
+            <hr>
+          </div>
+
+          
+        </div>
+        <div class="col-lg-5 col-xs-offset-1">
+          <h3>Heading</h3>
+          
+          <p>возрождение российской инженерной школы; возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
+
+          <h3>Categories</h3>
+
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+
+          <h3>Tags</h3>
+          <p><a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a></p>
+
+          <h3>Recent posts</h3>
+
+
+
+
+
+
+          <p><span class="glyphicon glyphicon-ok-sign"></span> повышение роли и статуса российского инженера;</p><hr>
+          <p><span class="glyphicon glyphicon-ok-sign"></span> укрепление связей выпускников нашего университета.</p>
+        </div>
+    </div>
