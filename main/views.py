@@ -9,6 +9,7 @@ def index(request):
 	newsList = News.objects.filter(isFavorite = True).order_by('-pub_date')[:5]
 	departmentsList = Departments.objects.exclude(short_name = 'msb')
 	projectsList = Projects.objects.filter(isFavorite = True)[:10]
+
 	memorandum = get_object_or_404(Articles, short_name = 'memorandum')
 	bannersList = Banners.objects.all()
 	contacts = get_object_or_404(Contacts)
