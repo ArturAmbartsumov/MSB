@@ -43,7 +43,7 @@ def articleList(request):
 		'bannersList': bannersList,
 		'contacts': contacts
 	}
-	return render(request, 'main/base_articlList.html', articlesList)
+	return render(request, 'main/base_articlList.html', context)
 
 def department(request, department):
 	cur_department = get_object_or_404(Departments, short_name = department)
