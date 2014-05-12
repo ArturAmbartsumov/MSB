@@ -31,21 +31,27 @@
     <!-- /.carousel -->
 {% endblock caruosel %}
 
-{% block content %}   
-   <div class="row">
-        <div  align="center">
-            	<h1 class="brandHeader">Международное Содружество бауманцев</h1>
-                <div class="col-lg-7 col-xs-offset-2 thumbnail">
-						<img alt="..." src={% static 'main/img/Gerb_MGTU_imeni_Baumana.png' %}>
-                 </div>
-            <p class="col-lg-10 col-xs-offset-1" >Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана!<br> При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: <br>
-•	возрождение российской инженерной школы;<br>
-•	повышение роли и статуса российского инженера;<br>
-•	укрепление связей выпускников нашего университета.</p>
+{% block hello %}   
+  <div class="row brand">
+      <h1 class="brandHeader">Международное Содружество бауманцев</h1>
+      <h2>то, что мы делаем сегодня, завтра сделает мир лучше</h2>
+        <div class="col-lg-7 col-xs-offset-2 thumbnail">
+					<img alt="..." src={% static 'main/img/Gerb_MGTU_imeni_Baumana.png' %}>
         </div>
+        <div class="col-lg-10 col-xs-offset-1">
+          <p> Мы обращаемся ко всем выпускникам, студентам, аспирантам Московского государственного технического университета имени Н.Э.Баумана!<br><br> При нашей Альма-матер создан некоммерческий фонд <strong> «Международный СОЮЗ БАУМАНЦЕВ» </strong>основные цели которого: </p>
+          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> возрождение российской инженерной школы;</p><hr>
+          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> повышение роли и статуса российского инженера;</p><hr>
+          <p><span class="glyphicon glyphicon glyphicon-ok-sign"></span> укрепление связей выпускников нашего университета.</p>
         </div>
-  
-    <h1 class="brandHeader">Общественные организации</h1>
+    </div>
+{% endblock hello %}
+
+{% block parts %} 
+  <div class="brand "> 
+    <h1 class="brandHeader">Направления работы</h1>
+    <h3>Организции, под управлением фонда</h3>
+  </div>  
     <div class="row">
       {% for v in departmentsList %}
         <div class="col-lg-5">
@@ -54,19 +60,22 @@
             <div class="caption">
               <h3 class="blue-row">{{ v.name }}</h3>
               <p> {{ v.description }}</p>
-              <p><a href={% url 'main:department' v.short_name %} class="btn btn-primary" role="button">Узанать больше</a>
+              <a href={% url 'main:department' v.short_name %} class="btn btn-primary" role="button">Узанать больше</a>
             </div>
           </div>
         </div>
       {% endfor %}
-    </div>    	
-            
-            
+    </div>    
+{% endblock parts %} 	
+
+{% block gallery %} 
+    <div class="brand">
             <div class="container-fluid">
-            	<h1 class="brandHeader">ЯЯЯ Наши проекты ? Какой будет ваша история?</h1> 
-                <div class="row" align="center">
+            	<h1 class="brandHeader">Над чем мы работаем? </h1> 
+              <h3>то, что мы делаем сегодня, завтра сделает мир лучше</h3>
+                <div class="row btn-row" align="center">
                     <div class="btn-group btn-group-lg">
-                        <button type="button" class="btn btn-default">Все</button>
+                        <button type="button" class="btn btn-default active">Все</button>
                         <button type="button" class="btn btn-default">ЛСТП</button>
                         <button type="button" class="btn btn-default">РепА</button>
                         <button type="button" class="btn btn-default">МСБ</button>
@@ -74,122 +83,46 @@
                     </div>
                </div>
             </div>
+  </div>
+
             <!-- Keep all page content within the page-content inset div! -->
 
   <div class="row gallery">
     {% for v in projectsList %}
-      <div class="col-md-4 imgItem">
+      <div class="col-sm-4 imgItem">
+        <a href={% url 'main:project' v.short_name %}>
         <div class="projectsGallerie_project thumbnail">
             <img src="{{ v.photo.get_gallerySize_url }}"/>
             <div class="projectsGallerie_project_text">
-              <h6>Я - заголовок</h6>
-              <div>А я - комментарий к этой прекрасной картинке. Я такой длинный, что занимаю несколько строчек.</div>
+              <h1>{{ v.name }}</h1>
+              <div>{{ v.department.name}}</div>
             </div>
         </div>
+        </a>
       </div>
     {% endfor %}
+  </div>
+{% endblock gallery %}
+
+{% block footer %}
+  <div class="brand "> 
+    <h1 class="brandHeader">контакты</h1>
+    <h3>мы ждем от вас отзывы и пердложения</h3>
   </div>  
-    
-    <!-- SIGN IN Modal -->
-    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Форма регистрации для...</h4>
-                      </div>
-                     
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  ...выпускника
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-              
-              <div class="input-group">
-                  <span class="input-group-addon">e-mai@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-                </div>  
-                
-                <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  ...участника проекта
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-               <div class="input-group">
-                  <span class="input-group-addon">e-mai@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-              </div>
-            <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  ...инвестора
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-               <div class="input-group">
-                  <span class="input-group-addon">e-mail@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-                </div>  
-                
-                <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-            
-            </div>
-            </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-            <button type="button" class="btn btn-primary">Зарегистрироваться</button>
-          </div>
-        </div>
-      </div>
+  <img alt="Карты яндекс" src={% static 'main/img/Ya_map.png' %}>
+  <div class="brand-footer row">
+    <div class="col-md-8">
+      <p><span class="glyphicon glyphicon-tower"></span> Prtner #1</p>
+      <p><span class="glyphicon glyphicon-send"></span> Prtner #2</p>
+      <p><span class="glyphicon glyphicon-leaf"></span> Prtner #3</p>
     </div>
-{% endblock content %}
+    <div class="col-md-7">
+    </div>
+    <div class="col-md-5">
+    </div>
+
+    <!-- <img width="100%" alt="Карты яндекс" src={% static 'main/img/4.jpg' %}> -->
+  </div>
+{% endblock footer %}
+
 
