@@ -61,8 +61,11 @@
 
 		{% block caruosel %} {% endblock caruosel%}
 		
-			{% block content %} {% endblock content %}
-		
+		{% block hello %} {% endblock hello %}
+
+		{% block parts %} {% endblock parts %}
+
+		{% block gallery %} {% endblock gallery %}
 		
 		{% block footer%}
 			<div class="row">
@@ -107,6 +110,110 @@
 		{% endblock footer%}
 
 	</div>
+
+	{% block signin_modal %} 
+    <!-- SIGN IN Modal -->
+    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Форма регистрации для...</h4>
+                      </div>
+                     
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  ...выпускника
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+              
+              <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>  
+                
+                <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  ...участника проекта
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mai@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+              </div>
+            <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  ...инвестора
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+               <div class="input-group">
+                  <span class="input-group-addon">e-mail@ru</span>
+                  <input type="text" class="form-control" placeholder="mail@mail.ru">
+                </div>
+                
+              <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>  
+                
+                <div class="input-group">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" placeholder="Login">
+                </div>
+              </div>
+            </div>
+            
+            </div>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock signin_modal %}
 
 	<!-- JavaScript -->
     <script src={% static 'main/js/jquery.min.js' %}></script>

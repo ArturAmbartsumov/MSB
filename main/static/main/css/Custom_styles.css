@@ -42,8 +42,12 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box; 
      
-    color:#fff;
-         
+    color:#fff; 
+
     padding:10px;
     background-color:rgba(0,0,0,.3);     
+}
+
+.brand-footer {
+    background: url ('../img/4.jpg');
 }
