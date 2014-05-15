@@ -67,7 +67,7 @@
       	{% for v in newsList%}
       		<div class="row">
           		<div class="col-lg-18 col-xs-offset-2 thumbnail">
-              		<img alt="v.photo.description" src="{{ v.photo.get_blogsize_url }}" %}>
+              		<img alt="{{ v.photo.description }}" src="{{ v.photo.get_blogsize_url }}" %}>
               		<div class="caption blog">
                 		<div lass="blogtags">
                   			<p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
@@ -96,14 +96,14 @@
           </ul>
 
         <h3>Tags -? </h3>
-        <p><a class="btn btn-lg btn-info" href=# role="button">Тег №1</a> <a class="btn btn-lg btn-info" href=# role="button">Спорт</a> <a class="btn btn-lg btn-info" href=#  role="button">Политика</a> <a class="btn btn-lg btn-info" href=#  role="button">МГТУ</a> <a class="btn btn-lg btn-info" href=#  role="button">Бизнес</a></p>
+        <p><a class="btn btn-lg btn-info" href=# role="button">еждународные</a> <a class="btn btn-lg btn-info" href=# role="button">Спорт</a> <a class="btn btn-lg btn-info" href=#  role="button">Политика</a> <a class="btn btn-lg btn-info" href=#  role="button">Образование</a> <a class="btn btn-lg btn-info" href=#  role="button">Бизнес проекты</a> <a class="btn btn-lg btn-info" href=#  role="button">Тег1</a> <a class="btn btn-lg btn-info" href=#  role="button">МГТУ</a></p>
 
         <h3>Recent posts</h3>
         {% for v in newsList%}
           	<div class="row">
             	<hr>
               	<div class="col-xs-8 thumbnail">
-                	<a href=#><img alt="v.photo.description" src="{{ v.photo.get_thumbnail_url }}" %}></a> 
+                	<a href=#><img alt="{{ v.photo.description }}" src="{{ v.photo.get_thumbnail_url }}" %}></a> 
               	</div>
               	<div class="col-lg-10">
                 	<p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} <br> <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
