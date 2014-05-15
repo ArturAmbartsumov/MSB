@@ -54,6 +54,9 @@
 	6) python manage.py migrate --list
 	-список всех миграций (звездочкой помечены те, кторрые применены)
 
+Джанго сервер в режиме демона:
+	http://stackoverflow.com/questions/15200732/how-to-stop-server-ran-in-daemon-mode-in-django
+
 Про удаленный доступ к серверу:
 	1) http://forum.altlinux.org/index.php?topic=9175.0
 	- описано много всяких способов

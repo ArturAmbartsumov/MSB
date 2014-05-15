@@ -35,7 +35,8 @@ def article(request, article):
 	return render(request, 'main/' + article.template, context)
 
 def articleList(request):
-	articlesList = Articles.objects.filter(pub_date__lte = datetime.datetime.now()).order_by('pub_date')[:10]
+	articlesList = Articles.objects.all().order_by('pub_date')[:10]
+	print articlesList
 	bannersList = Banners.objects.all()
 	contacts = get_object_or_404(Contacts)
 	context = {
@@ -43,12 +44,12 @@ def articleList(request):
 		'bannersList': bannersList,
 		'contacts': contacts
 	}
-	return render(request, 'main/base_articlList.html', articlesList)
+	return render(request, 'main/base_articlList.html', context)
 
 def department(request, department):
 	cur_department = get_object_or_404(Departments, short_name = department)
 	projectsList = cur_department.projects_set.all()[:5]
-	articlesList = cur_department.article.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
+	articlesList = cur_department.article.filter(isFavorite = True).order_by('-pub_date')[:5]
 	bannersList = Banners.objects.all()
 	contacts = get_object_or_404(Contacts)
 	context = {
@@ -94,7 +95,7 @@ def news(request, news_id):
 	return render(request, 'main/' + news.template, context)
 
 def newsList(request):
-	newsList = News.objects.filter(pub_date__lte = datetime.datetime.now(), isFavorite = True).order_by('-pub_date')[:5]
+	newsList = News.objects.filter(isFavorite = True).order_by('-pub_date')[:5]
 	bannersList = Banners.objects.all()
 	contacts = get_object_or_404(Contacts)
 	context = {
