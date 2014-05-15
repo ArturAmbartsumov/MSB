@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'main',
     'photologue',
+    'sortedm2m'
 )
 
 SITE_ID = 1
