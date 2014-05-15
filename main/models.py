@@ -1,4 +1,5 @@
 from django.db import models
+from sortedm2m.fields import SortedManyToManyField
 from ckeditor.fields import RichTextField
 from photologue.models import Photo, Gallery
 import datetime
@@ -11,7 +12,7 @@ class Departments(models.Model):
 	description = models.TextField(blank=True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-	article = models.ManyToManyField('Articles', blank = True)
+	article = SortedManyToManyField('Articles', blank = True)
 	template = models.CharField(max_length=50, default='base_department.html')
 	def __unicode__(self):
 		return self.short_name
