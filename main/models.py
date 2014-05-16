@@ -1,4 +1,5 @@
 from django.db import models
+from sortedm2m.fields import SortedManyToManyField
 from ckeditor.fields import RichTextField
 from photologue.models import Photo, Gallery
 import datetime
@@ -11,7 +12,7 @@ class Departments(models.Model):
 	description = models.TextField(blank=True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-	article = models.ManyToManyField('Articles', blank = True)
+	article = SortedManyToManyField('Articles', blank = True)
 	template = models.CharField(max_length=50, default='base_department.html')
 	def __unicode__(self):
 		return self.short_name
@@ -22,7 +23,7 @@ class Projects(models.Model):
 	isFavorite = models.BooleanField(default=True)
 	description = models.TextField()
 	department = models.ForeignKey(Departments, blank=True, null=True, on_delete=models.SET_NULL)
-	article = models.ManyToManyField('Articles', blank = True)
+	article = SortedManyToManyField('Articles', blank = True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	content = RichTextField()
@@ -50,7 +51,7 @@ class News(models.Model):
 	isFavorite = models.BooleanField(default=True)
 	description = models.TextField(blank=True)
 	pub_date = models.DateTimeField(default=datetime.datetime.now())
-	article = models.ManyToManyField(Articles, blank = True)
+	article = SortedManyToManyField(Articles, blank = True)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	content = RichTextField()
@@ -62,7 +63,7 @@ class AboutBMSTU(models.Model):
 	title = models.CharField(max_length=250)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-	article = models.ManyToManyField(Articles, blank = True)
+	article = SortedManyToManyField(Articles, blank = True)
 	history_title = models.CharField(max_length=250)
 	history_text = models.TextField(blank=True)
 	history_photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
@@ -70,7 +71,7 @@ class AboutBMSTU(models.Model):
 	nowadays_title = models.CharField(max_length=250)
 	nowadays_text = models.TextField(blank=True)
 	nowadays_photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
-	graduates = models.ManyToManyField('Persons', blank = True)
+	graduates = SortedManyToManyField('Persons', blank = True)
 	tree_title = models.CharField(max_length=250)
 	tree_photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
 	def __unicode__(self):
@@ -89,7 +90,7 @@ class Contacts(models.Model):
 	phone_number = models.CharField(max_length=250, blank=True)
 	adress = models.CharField(max_length=250, blank=True)
 	contact_information = models.TextField(blank=True)
-	contactees = models.ManyToManyField(Persons, blank = True)
+	contactees = SortedManyToManyField(Persons, blank = True)
 	def __unicode__(self):
 		return self.title
 
