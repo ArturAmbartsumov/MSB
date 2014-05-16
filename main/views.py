@@ -7,103 +7,85 @@ import datetime
 
 def index(request):
 	newsList = News.objects.filter(isFavorite = True).order_by('-pub_date')[:5]
-	departmentsList = Departments.objects.exclude(short_name = 'msb')
 	projectsList = Projects.objects.filter(isFavorite = True)[:10]
-
-	memorandum = get_object_or_404(Articles, short_name = 'memorandum')
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
+	memorandum = get_object_or_404(Articles, short_name__iexact = 'memorandum')
 	context = {
 		'newsList': newsList,
-		'departmentsList': departmentsList,
 		'projectsList': projectsList,
-		'memorandum': memorandum,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'memorandum': memorandum
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/base_index.html', context)
 
 def article(request, article):
 	article = get_object_or_404(Articles, short_name = article)
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'article': article,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'article': article
 	}
 	return render(request, 'main/' + article.template, context)
 
 def articleList(request):
 	articlesList = Articles.objects.all().order_by('pub_date')[:10]
-	print articlesList
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'articlesList': articlesList,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'articlesList': articlesList
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/base_articlList.html', context)
 
 def department(request, department):
 	cur_department = get_object_or_404(Departments, short_name = department)
 	projectsList = cur_department.projects_set.all()[:5]
 	articlesList = cur_department.article.filter(isFavorite = True).order_by('-pub_date')[:5]
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
 		'department': cur_department,
 		'projectsList': projectsList,
-		'articlesList': articlesList,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'articlesList': articlesList
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/' + cur_department.template, context)
 
 def project(request, project):
 	project = get_object_or_404(Projects, short_name = project)
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'project': project,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'project': project
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/' + project.template, context)
 
 def projectList(request):
 	projectsList = Projects.objects.all()[:10]
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'projectsList': projectsList,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'projectsList': projectsList
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/base_projectList.html', context)
 
 def news(request, news_id):
 	news = get_object_or_404(News, pk = news_id)
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'news': news,
-		'bannersList': bannersList,
-		'contacts': contacts
+		'news': news
 	}
+	context.update(getDefaultContext())
 	return render(request, 'main/' + news.template, context)
 
 def newsList(request):
 	newsList = News.objects.filter(isFavorite = True).order_by('-pub_date')[:5]
-	bannersList = Banners.objects.all()
-	contacts = get_object_or_404(Contacts)
 	context = {
-		'newsList': newsList,
+		'newsList': newsList
+	}
+	context.update(getDefaultContext())
+	return render(request, 'main/base_newsList.html', context)
+
+def getDefaultContext():
+	bannersList = Banners.objects.all()
+	contacts = Contacts.objects.get()
+	departmentsList = Departments.objects.exclude(short_name = 'msb')
+	context = {
+		'departmentsList': departmentsList,
 		'bannersList': bannersList,
 		'contacts': contacts
 	}
-	return render(request, 'main/base_newsList.html', context)
+	return context
 
 
 
