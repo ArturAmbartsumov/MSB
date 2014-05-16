@@ -1,93 +1,31 @@
 {% extends "main/base.html" %}
 
-{% block title %} List of the srticles {% endblock title %}
+{% block title %} {{ article.short_name }} {% endblock title %}
 
+{% block caruosel %} 
+  <div class='blog'>
+    <h1 class="brandHeader">{{ article.title }}</h1>
+    <hr>
+  </div>  
+  <div class="container">
+{% endblock caruosel%}
 
 {% block hello %} 
-
-	
+<div lass="blogtags">
+  <p><span class="glyphicon glyphicon-time"></span> {{ article.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+</div>
+<div class="thumbnail">
+  <img alt="{{ article.photo.description }}" src="{{ article.photo.get_blogsize_url }}" %}>
+</div>
+<div class='blog'>
+  {% autoescape off %} <p>{{ article.content }}</p> {% endautoescape %}
+</div>
+  <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
+  <hr>
+</div><!-- col-lg-12-->
 {% endblock hello %}
 
+{% block parts %} {% endblock parts %}
 
-{% if articleList %}
-	{% for article in articleList %}
-		{{ article.article }}
-		{{ article.summary|safe }}
-		<li><a href="{% url 'main:article' article.article %}">Читать полностью</a></li>
-	{% endfor %}
-    {{ article.content|safe }}
-{% else %}
-    <p>No article are available.</p>
-{% endif %}
-
- <h1 class="brandHeader">Статьи</h1>
-    	<div class="row ">
-        	<div class="col-lg-10 col-xs-offset-2 thumbnail">
-          		<img alt="..." src={% static 'main/img/14.jpg' %}>
-          		<div class="caption blog">
-            		<div lass="blogtags">
-            			<p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
-            		</div>
-            		<h1> <a href=#>Мы обращаемся ко всем выпускникам</a></h1><hr>
-            		<p>Возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
-					<p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
-            		<hr>
-          		</div>
-			</div>
-        	<div class="col-lg-6 col-xs-offset-1">
-          		<h3>Heading</h3>
-     			<p>возрождение российской инженерной школы; возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;возрождение российской инженерной школы;</p>
-
-          <h3>Categories</h3>
-
-          <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
-
-          <h3>Tags</h3>
-          <p><a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=# role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a> <a class="btn btn-lg btn-info" href=#  role="button">Читать далее</a></p>
-
-          <h3>Recent posts</h3>
-          <div class="row">
-            <hr>
-              <div class="col-xs-8 thumbnail">
-                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
-              </div>
-              <div class="col-lg-10">
-                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
-                <h4>Recent posts</h4>
-              </div>
-               </div>
-              <div class="row">
-
-
-              <hr>
-              <div class="col-xs-8 thumbnail">
-                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
-              </div>
-              <div class="col-lg-10">
-                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
-                <h4>Recent posts</h4>
-              </div>
-               </div>
-
-              <div class="row">
-              <hr>
-              <div class="col-xs-8 thumbnail">
-                <a href=#><img alt="..." src={% static 'main/img/14.jpg' %}></a> 
-              </div>
-              <div class="col-lg-10">
-                <p><span class="glyphicon glyphicon-time"></span> Public date | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
-                <h4>Recent posts</h4>
-              </div>
-
-
-
-             
-          </div>
-    </div>
-</div>
+{% block gallery %}{% endblock gallery %}
+    

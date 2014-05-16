@@ -1,1 +1,31 @@
-Это шаблон для новости
+{% extends "main/base.html" %}
+
+{% block title %} {{ news.short_name }} {% endblock title %}
+
+{% block caruosel %} 
+  <div class='blog'>
+    <h1 class="brandHeader">{{ news.title }}</h1>
+    <hr>
+  </div>  
+  <div class="container">
+{% endblock caruosel%}
+
+{% block hello %} 
+<div lass="blogtags">
+  <p><span class="glyphicon glyphicon-time"></span> {{ news.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+</div>
+<div class="thumbnail">
+  <img alt="{{ news.photo.description }}" src="{{ news.photo.get_blogsize_url }}" %}>
+</div>
+<div class='blog'>
+  {% autoescape off %} <p>{{ news.content }}</p> {% endautoescape %}
+</div>
+  <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
+  <hr>
+</div><!-- col-lg-12-->
+{% endblock hello %}
+
+{% block parts %} {% endblock parts %}
+
+{% block gallery %}{% endblock gallery %}
+    
