@@ -14,7 +14,7 @@ def index(request):
 		'projectsList': projectsList,
 		'memorandum': memorandum
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/base_index.html', context)
 
 def article(request, article):
@@ -29,7 +29,7 @@ def articleList(request):
 	context = {
 		'articlesList': articlesList
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/base_articlList.html', context)
 
 def department(request, department):
@@ -41,7 +41,7 @@ def department(request, department):
 		'projectsList': projectsList,
 		'articlesList': articlesList
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/' + cur_department.template, context)
 
 def project(request, project):
@@ -49,7 +49,7 @@ def project(request, project):
 	context = {
 		'project': project
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/' + project.template, context)
 
 def projectList(request):
@@ -57,7 +57,7 @@ def projectList(request):
 	context = {
 		'projectsList': projectsList
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/base_projectList.html', context)
 
 def news(request, news_id):
@@ -65,7 +65,7 @@ def news(request, news_id):
 	context = {
 		'news': news
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/' + news.template, context)
 
 def newsList(request):
@@ -73,14 +73,15 @@ def newsList(request):
 	context = {
 		'newsList': newsList
 	}
-	context.update(getDefaultContext())
+	context.update(getDefaultContext(request))
 	return render(request, 'main/base_newsList.html', context)
 
-def getDefaultContext():
+def getDefaultContext(request):
 	bannersList = Banners.objects.all()
 	contacts = Contacts.objects.get()
 	departmentsList = Departments.objects.exclude(short_name = 'msb')
 	context = {
+		'location': request.path,
 		'departmentsList': departmentsList,
 		'bannersList': bannersList,
 		'contacts': contacts
