@@ -26,22 +26,29 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="#"><strong>Мeждународное Содружество Бауманцев</strong></a>
+		          <a class="navbar-brand"><strong>Мeждународное Содружество Бауманцев</strong></a>
 		        </div>
 		        <div class="collapse navbar-collapse">
 		          <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href={% url 'main:index'%}>Главная</a></li>
-		            <li class="dropdown"><a href={% url 'main:projectList'%} class="dropdown-toggle" data-toggle="dropdown">Проекты<b class="caret"></b></a>
+
+		            <li {% if index %} class="active" {% endif %}><a href={% url 'main:index'%}>Главная</a></li>
+
+		            <li class="dropdown {% if department %} active {% endif %} ">
+
+                  <a href={% url 'main:projectList'%} class="dropdown-toggle" data-toggle="dropdown">Проекты<b class="caret"></b></a>
 		              <ul class="dropdown-menu">
+
 		              	{% for v in departmentsList %}
 		                	<li><a href={% url 'main:department' v.short_name %}>{{ v.name }}</a></li>
 		                {% endfor %}
-		                <li class="divider"></li>
-		                <li><a href="{% url 'main:articleList'%}">Статьи</a></li>
+
 		              </ul>
+
 		            </li>
-		            <li><a href={% url 'main:newsList'%}>События</a></li>
-		            <li><a href={% url 'main:projectList'%}>Альма матер</a></li>
+		            <li><a href={% url 'main:newsList'%} {% if newsList %} class="active" {% endif %}>События</a></li>
+
+		            <li><a href={% url 'main:projectList'%} {% if projectList %} class="active" {% endif %}>Альма матер</a></li>
+
 		            <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
 		            <li><a href="#">Контакты</a></li>
 		          </ul>

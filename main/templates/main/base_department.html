@@ -4,50 +4,6 @@
 
 {% block title %} {{ department.name }} {% endblock title %}
 
-{% block menu%}         
-		 <div class="container"> 
-		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		      <div class="container-fluid">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		          </button>
-		        </div>
-		        <div class="collapse navbar-collapse">
-		          <ul class="nav navbar-nav navbar-right">
-		            <li><a href={% url 'main:index'%}>Главная</a></li>
-		            <li class="dropdown active"><a href={% url 'main:index'%} class="dropdown-toggle" data-toggle="dropdown">Проекты<b class="caret"></b></a>
-		              <ul class="dropdown-menu">
-		              	{% for v in departmentsList %}
-		                	<li><a href={% url 'main:department' 'baumzem' %}>{{ v.name }}</a></li>
-		                {% endfor %}
-		                <li class="divider"></li>
-		                <li><a href="{% url 'main:articleList'%}">Статьи</a></li>
-		                <li class="divider"></li>
-		                <li><a href="#">Сотрудничество</a></li>
-		              </ul>
-		            </li>
-		            <li><a href={% url 'main:newsList'%}>События</a></li>
-		            <li><a href={% url 'main:projectList'%}>Альма матер</a></li>
-		            <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
-		            <li><a href="#">Контакты</a></li>
-		          </ul>
-		                   					<!--<form class="navbar-form navbar-left" role="search">
-		                    						<div class="form-group">
-		                      							<input type="text" class="form-control" placeholder="Search">
-		                    						</div>
-		                    						<button type="submit" class="btn btn-default">Submit</button>
-		                  						</form>
-		                  						<button type="button" class="btn btn-default navbar-btn btn-danger" data-toggle="modal" data-target="#SignInModal">Присоединяйся</button>-->
-		        </div>
-		      </div>
-		    </nav>      
-		 </div>
-		{% endblock menu %}
-
    <div class="row ">
 	      <div id="myCarousel" class="carousel slide" data-ride="carousel"  align="center">
 	      <!-- Indicators -->
@@ -119,33 +75,5 @@
   </div>
 {% endblock gallery %}
 
-{% block footer %}
-  <div class="brand "> 
-    <h1 class="brandHeader">контакты</h1>
-    <h3>мы ждем от вас отзывы и пердложения</h3>
-  </div>  
-  <img alt="Карты яндекс" src={% static 'main/img/Ya_map.png' %}>
-  <div class="brand-footer row">
-    <div class="col-md-8">
-      <p><a href=#><span class="glyphicon glyphicon-tower"></span> Prtner #1</p></a>
-      <p><a href=#><span class="glyphicon glyphicon-send"></span> Prtner #2</p></a>
-      <p><a href=#><span class="glyphicon glyphicon-leaf"></span> Prtner #3</p></a>
-    </div>
-    <div class="col-md-7">
-      <div class="panel-body">
-        <ul class="list-group">
-          <li class="list-group-item">{{ contacts }}</li>
-          <li class="list-group-item"> 8(1038) 456-234</li>
-          <li class="list-group-item"> e-mail@mail.ru</li>
-          <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-5 foot-brand">
-    </div>
-
-    <!-- <img width="100%" alt="Карты яндекс" src={% static 'main/img/4.jpg' %}> -->
-  </div>
-{% endblock footer %}
 
 
