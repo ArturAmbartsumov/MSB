@@ -35,7 +35,7 @@
 
 		            <li class="dropdown {% if department %} active {% endif %} ">
 
-                  <a href={% url 'main:projectList'%} class="dropdown-toggle" data-toggle="dropdown">Проекты<b class="caret"></b></a>
+                  <a href={% url 'main:projectList'%} class="dropdown-toggle" data-toggle="dropdown">Подразделения<b class="caret"></b></a>
 		              <ul class="dropdown-menu">
 
 		              	{% for v in departmentsList %}
@@ -47,10 +47,10 @@
 		            </li>
 		            <li><a href={% url 'main:newsList'%} {% if newsList %} class="active" {% endif %}>События</a></li>
 
-		            <li><a href={% url 'main:projectList'%} {% if projectsList %} class="active" {% endif %}>Альма матер</a></li>
+		            <li><a href={% url 'main:projectList'%} {% if projectsList %} class="active" {% endif %}>Проекты</a></li>
 
 		            <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
-		            <li><a href="#">Контакты</a></li>
+		            <!--<li><a href="#">Контакты</a></li>-->
 		          </ul>
 		                   					<!--<form class="navbar-form navbar-left" role="search">
 		                    						<div class="form-group">
@@ -125,8 +125,8 @@
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-10">
           <div class="col-lg-10 col-md-10 col-sm-10 ">
           <h4><span class="glyphicon glyphicon-send"></span>_e-mail.com</h4>
-          <h4>+7 (888) 456789</4>
-            <h4>+7 (888) 456789</4>
+          <h4>+7 (888) 456789</h4>
+            <h4>+7 (888) 456789</h4>
           </div>
         <div class="ccol-lg-10 col-md-10 col-sm-10 ">
           <h4></h4>
@@ -146,10 +146,11 @@
         <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Форма регистрации для...</h4>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
                       </div>
+            <h4 style="padding:50px;">Вы можете запросить любую интересующую информацию ппо нашму адресу электронной почты <strong>Ibcfund@mail.ru</strong></h4>
                      
-        <div class="panel-group" id="accordion">
+      <!--  <div class="panel-group" id="accordion">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
@@ -233,10 +234,12 @@
             </div>
             
             </div>
-            </div>
+            </div>-->
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-            <button type="button" class="btn btn-info">Зарегистрироваться</button>
+           <!-- <button type="button" class="btn btn-info">Написать письмо</button>-->
+            
+            <a class="btn btn-info" href="mailto:Ibcfund@mail.ru?subject=Информационное письмо">Напиьсать письмо</a>
           </div>
         </div>
       </div>
