@@ -3,5 +3,3 @@ bootstrap
 backupdoc
 media
 *.pyc
-
-main/templates/main/base.html
