@@ -24,6 +24,7 @@ def article(request, article):
 		'isArticle': True,
 		'article': article
 	}
+	context.update(getDefaultContext(request))
 	return render(request, 'main/' + article.template, context)
 
 def articleList(request):
