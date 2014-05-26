@@ -85,6 +85,21 @@ def newsList(request):
 	context.update(getDefaultContext(request))
 	return render(request, 'main/base_newsList.html', context)
 
+def bmstu(request):
+	bmstu = AboutBMSTU.objects.get()
+	context = {
+		'isNewsList': True,
+		'newsList': newsList
+	}
+	context.update(getDefaultContext(request))
+	return render(request, 'main/base_bmstu.html', context)
+
+def contacts(request):
+	context = {
+	}
+	context.update(getDefaultContext(request))
+	return render(request, 'main/base_newsList.html', context)
+
 def getDefaultContext(request):
 	bannersList = Banners.objects.all()
 	contacts = Contacts.objects.get()
