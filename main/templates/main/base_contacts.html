@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} {{ contacts.title }}  {% endblock title %}
+{% block caruosel %}
+    
+		<div class='row'>
+			<div class="col-md-10">				
+				<div class="thumbnail" >
+					<img alt="{{ contacts.photo_map.Caption }}"  src="{{ contacts.photo_map.get_mydepbeg_url }}">
+				</div>				
+			</div>
+			<div class="col-md-10" style="height:500px">
+				<div class ="row infoblock">
+					<h1> {{ contacts.adress }} </h1>
+				</div>
+				<div class="row infoblock">
+					<p>{{ contacts.contact_information }}</p>
+					<p>{{ contacts.phone_number }}</p>
+				</div>
+			</div>
+		</div>
+{% endblock caruosel%}
+{% block footer %} {% endblock footer %}
