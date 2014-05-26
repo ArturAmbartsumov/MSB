@@ -21,7 +21,7 @@ urlpatterns = patterns('',
 	url(r'^news/(?P<news_id>\d+)/$', views.news, name='news'),
 
 	#bmstu
-	url(r'^bmstu/$', views.newsList, name='bmstu'),
+	url(r'^bmstu/$', views.bmstu, name='bmstu'),
 
 	#contacts
 	url(r'^contacts/$', views.newsList, name='contacts'),

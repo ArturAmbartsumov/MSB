@@ -88,8 +88,8 @@ def newsList(request):
 def bmstu(request):
 	bmstu = AboutBMSTU.objects.get()
 	context = {
-		'isNewsList': True,
-		'newsList': newsList
+		'isBmstu': True,
+		'bmstu': bmstu
 	}
 	context.update(getDefaultContext(request))
 	return render(request, 'main/base_bmstu.html', context)
