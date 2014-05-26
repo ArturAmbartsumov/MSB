@@ -96,6 +96,7 @@ def bmstu(request):
 
 def contacts(request):
 	context = {
+		'isContacts': True
 	}
 	context.update(getDefaultContext(request))
 	return render(request, 'main/base_newsList.html', context)

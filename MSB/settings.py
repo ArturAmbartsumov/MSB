@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'ckeditor',
     'main',
     'photologue',
-    'sortedm2m'
+    'sortedm2m',
+    'yandex_maps'
 )
 
 SITE_ID = 1
