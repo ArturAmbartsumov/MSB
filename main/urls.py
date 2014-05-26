@@ -19,4 +19,10 @@ urlpatterns = patterns('',
     #News
     url(r'^news/all/$', views.newsList, name='newsList'),
 	url(r'^news/(?P<news_id>\d+)/$', views.news, name='news'),
+
+	#bmstu
+	url(r'^bmstu/$', views.newsList, name='bmstu'),
+
+	#contacts
+	url(r'^contacts/$', views.newsList, name='contacts'),
 )

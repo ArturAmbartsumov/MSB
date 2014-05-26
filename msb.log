@@ -1,0 +1,407 @@
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:19:08 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+writing pidfile to /Users/artur/MSB/msb-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f8c7b6006b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f8c7b6006b0 pid: 8557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8558, cores: 1)
+spawned uWSGI worker 2 (pid: 8559, cores: 1)
+spawned uWSGI worker 3 (pid: 8560, cores: 1)
+spawned uWSGI worker 4 (pid: 8561, cores: 1)
+spawned uWSGI worker 5 (pid: 8562, cores: 1)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 8558)...
+Gracefully killing worker 2 (pid: 8559)...
+Gracefully killing worker 3 (pid: 8560)...
+Gracefully killing worker 4 (pid: 8561)...
+Gracefully killing worker 5 (pid: 8562)...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:19:17 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fdcd3f005f0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fdcd3f005f0 pid: 8557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8565, cores: 1)
+spawned uWSGI worker 2 (pid: 8566, cores: 1)
+spawned uWSGI worker 3 (pid: 8567, cores: 1)
+spawned uWSGI worker 4 (pid: 8568, cores: 1)
+spawned uWSGI worker 5 (pid: 8569, cores: 1)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/Library/Python/2.7/site-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/middleware.py", line 3, in <module>
+    from django.contrib.auth.backends import RemoteUserBackend
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/backends.py", line 3, in <module>
+    from django.contrib.auth.models import Permission
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/models.py", line 48, in <module>
+    class Permission(models.Model):
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 96, in __new__
+    new_class.add_to_class('_meta', Options(meta, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 264, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/Library/Python/2.7/site-packages/django/db/models/options.py", line 124, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/Library/Python/2.7/site-packages/django/db/__init__.py", line 34, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 198, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/mysql/base.py", line 17, in <module>
+    raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+[pid: 8569|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 07:19:31 2014] GET / => generated 0 bytes in 181 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 8566)...
+Gracefully killing worker 1 (pid: 8565)...
+Gracefully killing worker 3 (pid: 8567)...
+Gracefully killing worker 4 (pid: 8568)...
+Gracefully killing worker 5 (pid: 8569)...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:20:06 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f94fb600e40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8571, cores: 1)
+spawned uWSGI worker 2 (pid: 8572, cores: 1)
+spawned uWSGI worker 3 (pid: 8573, cores: 1)
+spawned uWSGI worker 4 (pid: 8574, cores: 1)
+spawned uWSGI worker 5 (pid: 8575, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 8574|app: -1|req: -1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 11:20:09 2014] GET / => generated 21 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 8571)...
+Gracefully killing worker 2 (pid: 8572)...
+Gracefully killing worker 3 (pid: 8573)...
+Gracefully killing worker 4 (pid: 8574)...
+Gracefully killing worker 5 (pid: 8575)...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:20:29 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fb5a96005f0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fb5a96005f0 pid: 8557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8578, cores: 1)
+spawned uWSGI worker 2 (pid: 8579, cores: 1)
+spawned uWSGI worker 3 (pid: 8580, cores: 1)
+spawned uWSGI worker 4 (pid: 8581, cores: 1)
+spawned uWSGI worker 5 (pid: 8582, cores: 1)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/Library/Python/2.7/site-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/middleware.py", line 3, in <module>
+    from django.contrib.auth.backends import RemoteUserBackend
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/backends.py", line 3, in <module>
+    from django.contrib.auth.models import Permission
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/models.py", line 48, in <module>
+    class Permission(models.Model):
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 96, in __new__
+    new_class.add_to_class('_meta', Options(meta, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 264, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/Library/Python/2.7/site-packages/django/db/models/options.py", line 124, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/Library/Python/2.7/site-packages/django/db/__init__.py", line 34, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 198, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/mysql/base.py", line 17, in <module>
+    raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+[pid: 8581|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 07:20:31 2014] GET / => generated 0 bytes in 176 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 8578)...
+Gracefully killing worker 2 (pid: 8579)...
+Gracefully killing worker 3 (pid: 8580)...
+Gracefully killing worker 4 (pid: 8581)...
+Gracefully killing worker 5 (pid: 8582)...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:21:09 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f834b500ff0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f834b500ff0 pid: 8557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8585, cores: 1)
+spawned uWSGI worker 2 (pid: 8586, cores: 1)
+spawned uWSGI worker 3 (pid: 8587, cores: 1)
+spawned uWSGI worker 4 (pid: 8588, cores: 1)
+spawned uWSGI worker 5 (pid: 8589, cores: 1)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/Library/Python/2.7/site-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/middleware.py", line 3, in <module>
+    from django.contrib.auth.backends import RemoteUserBackend
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/backends.py", line 3, in <module>
+    from django.contrib.auth.models import Permission
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/models.py", line 48, in <module>
+    class Permission(models.Model):
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 96, in __new__
+    new_class.add_to_class('_meta', Options(meta, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 264, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/Library/Python/2.7/site-packages/django/db/models/options.py", line 124, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/Library/Python/2.7/site-packages/django/db/__init__.py", line 34, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 198, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/mysql/base.py", line 17, in <module>
+    raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+[pid: 8588|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 07:21:11 2014] GET / => generated 0 bytes in 199 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 8586)...
+Gracefully killing worker 1 (pid: 8585)...
+Gracefully killing worker 3 (pid: 8587)...
+Gracefully killing worker 4 (pid: 8588)...
+Gracefully killing worker 5 (pid: 8589)...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.4 (64bit) on [Tue May 20 11:21:38 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 18 May 2014 19:38:36
+os: Darwin-13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64
+nodename: air-artur.connectify
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/artur/MSB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8002 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f8a08c09880
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 436512 bytes (426 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f8a08c09880 pid: 8557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 8557)
+spawned uWSGI worker 1 (pid: 8591, cores: 1)
+spawned uWSGI worker 2 (pid: 8592, cores: 1)
+spawned uWSGI worker 3 (pid: 8593, cores: 1)
+spawned uWSGI worker 4 (pid: 8594, cores: 1)
+spawned uWSGI worker 5 (pid: 8595, cores: 1)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 45, in load_middleware
+    mw_class = import_by_path(middleware_path)
+  File "/Library/Python/2.7/site-packages/django/utils/module_loading.py", line 21, in import_by_path
+    module = import_module(module_path)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/middleware.py", line 3, in <module>
+    from django.contrib.auth.backends import RemoteUserBackend
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/backends.py", line 3, in <module>
+    from django.contrib.auth.models import Permission
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/models.py", line 48, in <module>
+    class Permission(models.Model):
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 96, in __new__
+    new_class.add_to_class('_meta', Options(meta, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 264, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/Library/Python/2.7/site-packages/django/db/models/options.py", line 124, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/Library/Python/2.7/site-packages/django/db/__init__.py", line 34, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 198, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/mysql/base.py", line 17, in <module>
+    raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
+[pid: 8594|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 07:21:40 2014] GET / => generated 0 bytes in 189 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
