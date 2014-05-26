@@ -3,8 +3,10 @@
 {% block title %} {{ bmstu.title }} {% endblock title %}
 
 {% block caruosel %}
-<div class='blog'>
+<div class='blog brandHeader'>
 		<h1 class="brandHeader">{{ bmstu.title }}</h1>
+      <a href="http://www.bmstu.ru/"><h2>Вы можете посетить официальный сайт МГТУ</h2>
+
 		<hr>
 </div>	
 <div class='row'>			
@@ -45,7 +47,7 @@
   </div>  
     <div class="row">
       {% for v in bmstu.graduates.all %}
-        <div class="col-lg-5 col-md-10 col-sm-10">
+        <div class="col-lg-4 col-md-5 col-sm-10">
           <div class="thumbnail" >
             <img alt="{{ v.photo.Caption }}"  src="{{ v.photo.get_gallerysize_url }}">
             <div class="caption">
