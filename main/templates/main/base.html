@@ -47,7 +47,9 @@
 		            </li>
 		            <li class="{% if isNewsList %}active{% endif %}"><a href={% url 'main:newsList'%} >События</a></li>
 
-		            <li class="{% if isProjectList %}active{% endif %}"><a href={% url 'main:projectList'%}>Проекты</a></li>
+		            <li class="{% if isbmstu %}active{% endif %}"><a href={% url 'main:bmstu'%}>Альма-матер</a></li>
+
+                 <li class="{% if isProjectList %}active{% endif %}"><a href={% url 'main:projectList'%}>Проекты</a></li>
 
 		            <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
 		            <!--<li><a href="#">Контакты</a></li>-->

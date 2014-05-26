@@ -1,0 +1,68 @@
+{% extends "main/base.html" %}
+
+{% block title %} {{ bmstu.title }} {% endblock title %}
+
+{% block caruosel %}
+<div class='blog'>
+		<h1 class="brandHeader">{{ bmstu.title }}</h1>
+		<hr>
+</div>	
+<div class='row'>			
+	<div class="thumbnail" >
+		<img alt="{{ bmstu.photo.Caption }}"  src="{{ bmstu.photo.get_carouselsize_url }}">
+	</div>				
+</div>
+			
+	
+{% endblock caruosel%}
+
+		
+{% block hello %}
+  <div class="row brand">
+      <h1 class="brandHeader">{{ bmstu.history_title }}</h1>
+        <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+					<img alt="..." src="{{ bmstu.history_photo.get_blogsize_url }}">
+        </div>
+        <div class="col-lg-10  col-md-8 col-sm-8 ">
+          {% autoescape off %}<p> {{ bmstu.history_text }}<p>{% endautoescape %}<hr>
+        </div>
+    </div>
+
+    <div class="row brand">
+      <h1 class="brandHeader">{{ bmstu.nowadays_title }}</h1>
+        <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+					<img alt="..." src="{{ bmstu.nowadays_photo.get_blogsize_url }}">
+        </div>
+        <div class="col-lg-10  col-md-8 col-sm-8 ">
+          {% autoescape off %}<p> {{ bmstu.nowadays_text }}<p>{% endautoescape %}<hr>
+        </div>
+    </div>
+{% endblock hello %}
+
+{% block parts %}
+  <div class="brand "> 
+    <h1 class="brandHeader">Наши выпускники</h1>
+  </div>  
+    <div class="row">
+      {% for v in bmstu.graduates.all %}
+        <div class="col-lg-5 col-md-10 col-sm-10">
+          <div class="thumbnail" >
+            <img alt="{{ v.photo.Caption }}"  src="{{ v.photo.get_gallerysize_url }}">
+            <div class="caption">
+              <h3 class="blue-row">{{ v.full_name }}</h3>
+              <p> {{ v.text }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div> 
+{% endblock parts %}
+
+{% block gallery %}
+
+{% endblock gallery %}
+
+
+
+
+
