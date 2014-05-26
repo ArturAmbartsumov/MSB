@@ -47,7 +47,7 @@
 		            </li>
 		            <li class="{% if isNewsList %}active{% endif %}"><a href={% url 'main:newsList'%} >События</a></li>
 
-		            <li class="{% if isbmstu %}active{% endif %}"><a href={% url 'main:bmstu'%}>Альма-матер</a></li>
+		            <li class="{% if isBmstu %}active{% endif %}"><a href={% url 'main:bmstu'%}>Альма-матер</a></li>
 
                  <li class="{% if isContacts %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>
                 <!--<li><a href="{% if isProjectList %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>-->
@@ -125,13 +125,12 @@
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-10">
           <div class="col-lg-10 col-md-10 col-sm-10 ">
-          <h4><span class="glyphicon glyphicon-send"></span>_e-mail.com</h4>
-          <h4>+7 (888) 456789</h4>
-            <h4>+7 (888) 456789</h4>
+          <h4>{{ contacts.contact_information }} <span class="glyphicon glyphicon-send"></span></h4>
+            <h4>{{ contacts.phone_number }}</h4>
           </div>
         <div class="ccol-lg-10 col-md-10 col-sm-10 ">
           <h4></h4>
-          <h4>ул. 2-я Бауманская, д. 5</h4>
+          <h4>{{ contacts.adress }} </h4>
         </div>
         </div>
       </div>

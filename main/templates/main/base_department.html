@@ -45,7 +45,23 @@
 {% block hello %} 
 {% endblock hello %}
 
-{% block parts %} 
+{% block parts %} {% if Articles%}
+<div class="row gallery">
+    {% for v in projectsList %}
+      <div class="col-sm-4 imgItem">
+        <a href={% url 'main:project' v.short_name %}>
+        <div class="projectsGallerie_project thumbnail">
+            <img src="{{ v.photo.get_gallerysize_url }}"/>
+            <div class="projectsGallerie_project_text">
+              <h1>{{ v.name }}</h1>
+              <div>{{ v.department.name}}</div>
+            </div>
+        </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 {% endblock parts %} 	
 
 {% block gallery %} 
