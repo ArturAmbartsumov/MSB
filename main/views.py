@@ -99,7 +99,7 @@ def contacts(request):
 		'isContacts': True
 	}
 	context.update(getDefaultContext(request))
-	return render(request, 'main/base_newsList.html', context)
+	return render(request, 'main/base_contacts.html', context)
 
 def getDefaultContext(request):
 	bannersList = Banners.objects.all()

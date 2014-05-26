@@ -44,8 +44,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'main',
     'photologue',
-    'sortedm2m',
-    'yandex_maps'
+    'sortedm2m'
 )
 
 YANDEX_MAPS_API_KEY = 'ADaCg1MBAAAAEMeZcwQA5_jQE7AOVJJmZlOuoi2x0JeSDgoAAAAAAAAAAABdQNbKKmKSOhuffT8aih_syRN0MQ=='

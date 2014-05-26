@@ -24,5 +24,5 @@ urlpatterns = patterns('',
 	url(r'^bmstu/$', views.bmstu, name='bmstu'),
 
 	#contacts
-	url(r'^contacts/$', views.newsList, name='contacts'),
+	url(r'^contacts/$', views.contacts, name='contacts'),
 )

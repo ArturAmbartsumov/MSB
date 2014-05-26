@@ -49,10 +49,9 @@
 
 		            <li class="{% if isbmstu %}active{% endif %}"><a href={% url 'main:bmstu'%}>Альма-матер</a></li>
 
-                 <li class="{% if isProjectList %}active{% endif %}"><a href={% url 'main:projectList'%}>Проекты</a></li>
-
+                 <li class="{% if isContacts %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>
+                <!--<li><a href="{% if isProjectList %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>-->
 		            <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
-		            <!--<li><a href="#">Контакты</a></li>-->
 		          </ul>
 		                   					<!--<form class="navbar-form navbar-left" role="search">
 		                    						<div class="form-group">
