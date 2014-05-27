@@ -107,6 +107,7 @@ class Contacts(models.Model):
 	addresses = SortedManyToManyField(Addresses, blank = True)
 	emails = SortedManyToManyField(Emails, blank = True)
 	contact_information = models.TextField(blank=True)
+	bank_details = RichTextField()
 	contactees = SortedManyToManyField(Persons, blank = True)
 	def __unicode__(self):
 		return self.title
