@@ -75,45 +75,6 @@
 		{% block gallery %} {% endblock gallery %}
 		
 		{% block footer%}
-		<!--	<div class="row">
-			  <div id="footer">
-			    <div class="container footer">  
-			      <div class="row">
-			        <div class="col-md-3">
-			          <div class="panel panel-default">
-			            <div class="panel-heading">
-			              <h3 class="panel-title"><span class="glyphicon glyphicon-star"></span> Партнеры</h3>
-			            </div>
-			            <div class="panel-body">
-			              <a href="#" class="thumbnail">
-			                <img alt="..." src={% static 'main/img/banners/mailruLogo.gif' %} >
-			              </a> 
-			            </div>
-			           </div>
-			          </div>
-			        <div class="col-md-5">
-			          <div class="panel panel-default">
-			            <div class="panel-heading">
-			              <h3 class="panel-title"><span class="glyphicon glyphicon-envelope"></span> Контакты</h3>
-			            </div>
-			            <div class="panel-body">
-			              <ul class="list-group">
-			                <li class="list-group-item">{{ contacts }}</li>
-			                <li class="list-group-item"> 8(1038) 456-234</li>
-			                <li class="list-group-item"> e-mail@mail.ru</li>
-			                <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="col-md-3">
-			          <p class="text-muted">Place sticky footer content here.Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts. Introduction Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the
-			          </p>
-			        </div>
-			      </div>
-			    </div>
-			  </div>
-			</div>-->
       <div class="brand "> 
         <h1 class="brandHeader">контакты</h1> <hr>
       </div>  
@@ -134,116 +95,27 @@
         </div>
         </div>
       </div>
-
 		{% endblock footer%}
+  </div>
 
-	</div>
-
-	{% block signin_modal %} 
-    <!-- SIGN IN Modal -->
-    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel"></h4>
-                      </div>
-            <h4 style="padding:50px;">Вы можете запросить любую интересующую информацию ппо нашму адресу электронной почты <strong>Ibcfund@mail.ru</strong></h4>
-                     
-      <!--  <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  ...выпускника
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-              
-              <div class="input-group">
-                  <span class="input-group-addon">e-mai@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-                </div>  
-                
-                <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  ...участника проекта
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-               <div class="input-group">
-                  <span class="input-group-addon">e-mai@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-              </div>
-            <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  ...инвестора
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-               <div class="input-group">
-                  <span class="input-group-addon">e-mail@ru</span>
-                  <input type="text" class="form-control" placeholder="mail@mail.ru">
-                </div>
-                
-              <div class="input-group">
-                  <span class="input-group-addon">Username</span>
-                  <input type="text" class="form-control" placeholder="Username">
-                </div>  
-                
-                <div class="input-group">
-                  <span class="input-group-addon">Nickname</span>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-              </div>
-            </div>
-            
-            </div>
-            </div>-->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-           <!-- <button type="button" class="btn btn-info">Написать письмо</button>-->
-            
-            <a class="btn btn-info" href="mailto:Ibcfund@mail.ru?subject=Информационное письмо">Напиьсать письмо</a>
-          </div>
+{% block signin_modal %} 
+<!-- SIGN IN Modal -->
+  <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <h4 style="padding:50px;">{{ contacts.contact_information }}</h4>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <!-- <button type="button" class="btn btn-info">Написать письмо</button>-->            
+          <a class="btn btn-info" href="mailto:Ibcfund@mail.ru?subject=Информационное письмо">Напиьсать письмо</a>
         </div>
       </div>
     </div>
+  </div>
 {% endblock signin_modal %}
 
 	<!-- JavaScript -->

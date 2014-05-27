@@ -33,7 +33,6 @@
 
 
 {% block hello %}   
-
   <div class="row brand">
       <h1 class="brandHeader">Международное Содружество бауманцев</h1>
         <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
@@ -41,7 +40,7 @@
         </div>
         <div class="col-lg-10  col-md-8 col-sm-8 ">
           {% autoescape off %}<p> {{ memorandum.description }}<p>{% endautoescape %}<hr>
-          <p align="center"><a class="btn btn-lg btn-default" href={% url 'main:article' 'memorandum' %}>Чиатать далее</a></p>
+          <p align="center"><a class="btn btn-lg btn-default" href={% url 'main:article' 'memorandum' %}>Читать далее</a></p>
         </div>
     </div>
 {% endblock hello %}
@@ -52,13 +51,13 @@
   </div>  
     <div class="row">
       {% for v in departmentsList %}
-        <div class="col-lg-5 col-md-10 col-sm-10">
+        <div class="col-lg-5 col-md-10 col-sm-10" >
           <div class="thumbnail" >
             <img alt="{{ v.photo.Caption }}"  src="{{ v.photo.get_gallerysize_url }}">
             <div class="caption">
               <h3 class="blue-row">{{ v.name }}</h3>
               <p> {{ v.description }}</p>
-              <a href={% url 'main:department' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
+              <a href={% url 'main:department' v.short_name %} class="btn btn-info" role="button">Узнать больше</a>
             </div>
           </div>
         </div>
@@ -67,100 +66,29 @@
 {% endblock parts %} 	
 
 {% block gallery %} 
-    <div class="brand">
-            <div class="container-fluid">
-            	<h1 class="brandHeader">Проекты</h1> 
-              <h2><a class="btn btn-lg btn-default" href="{% url 'main:projectList'%}" role="button">Посмотреть все проекты</a></h2>
-              <!-- K <h3>то, что мы делаем сегодня, завтра сделает мир лучше</h3>
-                <div class="row btn-row" align="center">
-                    <div class="btn-group btn-group-lg">
-                        <button type="button" class="btn btn-default active">Все</button>
-                        <button type="button" class="btn btn-default">ЛСТП</button>
-                        <button type="button" class="btn btn-default">РепА</button>
-                        <button type="button" class="btn btn-default">МСБ</button>
-                        <button type="button" class="btn btn-default">Землячества</button>
-                    </div>
-               </div>-->
-            </div>
-  </div>
-
-            <!-- Keep all page content within the page-content inset div! -->
-
-  <div class="row gallery">
-    {% for v in projectsList %}
-      <div class="col-sm-4 col-xs-10 imgItem">
-        <a href={% url 'main:project' v.short_name %}>
-        <div class="projectsGallerie_project thumbnail">
-            <img src="{{ v.photo.get_gallerysize_url }}"/>
-            <div class="projectsGallerie_project_text">
-              <h1>{{ v.name }}</h1>
-              <div>{{ v.department.name}}</div>
-            </div>
+  {% if projectsList%}
+    <div class="container">
+      <div class="brand">
+        <div class="container-fluid">
+          <h1 class="brandHeader">Проекты</h1> 
+          <h2><a class="btn btn-lg btn-default" href="{% url 'main:projectList'%}" role="button">Посмотреть все проекты</a></h2>
         </div>
-        </a>
       </div>
-    {% endfor %}
-  </div>
-
-
+      {% for v in projectsList%}
+        <div class="row">
+          <hr>
+          <div class="col-lg-7 col-md-5 col-sm-10 thumbnail">
+            <a href={% url 'main:article' v.short_name %}><img alt="{{ v.photo.description }}" src="{{ v.photo.get_gallerysize_url }}" %}></a> 
+          </div>
+          <div class="col-lg-13 col-xs-15">
+            <h1>{{ v.name }}</h1>
+            {% autoescape off %}
+              <p> {{ v.description }}</p>
+            {% endautoescape %}
+            <a href={% url 'main:project' v.short_name %} class="btn btn-info" role="button">Узнать больше</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock gallery %}
-
-
-  <div class="col-md-12 text-center"><h3>Product Carousel</h3></div>
-<div class="col-md-6 col-md-offset-3">
-<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/e499e4/fff&amp;text=1" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-md-3 col-sm-6 col-xs-12"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
-    </div>
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-</div>
-</div>
-  <!-- <div class="brand "> 
-    <h1 class="brandHeader">контакты</h1>
-  </div>  
-  <div class="brand-footer row">
-    <div class="col-md-8">
-      <p><a href=#><span class="glyphicon glyphicon-tower"></span> Prtner #1</p></a>
-      <p><a href=#><span class="glyphicon glyphicon-send"></span> Prtner #2</p></a>
-      <p><a href=#><span class="glyphicon glyphicon-leaf"></span> Prtner #3</p></a>
-    </div>
-    <div class="col-md-7">
-      <div class="panel-body">
-        <ul class="list-group">
-          <li class="list-group-item">{{ contacts }}</li>
-          <li class="list-group-item"> 8(1038) 456-234</li>
-          <li class="list-group-item"> e-mail@mail.ru</li>
-          <li class="list-group-item">Moscow, Leningradsky avenue 37</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-5 foot-brand">
-    </div>
-
-    <<img width="100%" alt="Карты яндекс" src={% static 'main/img/4.jpg' %}> -->
-
-

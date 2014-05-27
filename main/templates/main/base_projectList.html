@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %} List of news {% endblock title %}
+{% block title %} List of projects {% endblock title %}
 
 {% block caruosel %} {% endblock caruosel%}
 
@@ -11,66 +11,30 @@
     <h1 class="brandHeader">Проекты</h1>
     <hr>
   </div>  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-14">
-
 {% endblock hello %}
 
 
 {% block parts %} 
-        {% for v in projectsList%}
-          <div class="row">
-              <div class="thumbnail">
-                  <img alt="{{ v.photo.description }}" src="{{ v.photo.get_blogsize_url }}" %}>
-                  <div class="caption blog">
-                    <div lass="blogtags">
-                        <p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
-                    </div>
-                    <h1> <a href="{% url 'main:project' v.short_name %}">{{ v.name }}</a></h1><hr>
-                    <p>{{ v.description }}</p>
-                  <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
-                    <hr>
-                  </div>
-            </div>
-          </div>
-      {% endfor %}
-     
-  </div><!-- col-lg-12-->
+  {% for v in projectsList%}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-20">
+          <h2>{{ v.name }}</h2>  
+          <hr>
+        </div>
+        <div class="col-sm-2"><img alt="{{ v.photo.description }}" src="{{ v.photo.get_thumbnail_url }}"></div>
+        <div class="col-sm-17 col-sm-offset-1">
+          <h4>{{ v.description }}</h4>
+          <p> <button class="btn btn-default">Узнать больше</button></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+  {% endfor %}
+
 {% endblock parts %}
 
 {% block gallery %}
-    <div class="col-md-6 sidebar">
-        <h3>Анонс раздела</h3>
-        <p>Любой текст, подходящий к тематике новостного раздела. Возможно реклама или афоризмю</p>
-        
-        <h3>Категории</h3>
-          <ul class="list-group">
-            {% for v in newsList %}
-              <li class="list-group-item">Новости из раздела...</li>
-            {% endfor %}
-          </ul>
-
-        <h3>Tags</h3>
-        <p><a class="btn btn-lg btn-default btn-sm" href=# role="button">еждународные</a> <a class="btn btn-lg btn-info btn-sm" href=# role="button">Спорт</a> <a class="btn btn-lg btn-info btn-sm" href=#  role="button">Политика</a> <a class="btn btn-lg btn-info" href=#  role="button">Образование</a> <a class="btn btn-lg btn-info" href=#  role="button">Бизнес проекты</a> <a class="btn btn-lg btn-info" href=#  role="button">Тег1</a> <a class="btn btn-lg btn-info" href=#  role="button">МГТУ</a></p>
-
-        <h3>Recent posts</h3>
-        {% for v in projectsList%}
-            <div class="row">
-              <hr>
-                <div class="col-xs-8 thumbnail">
-                  <a href=#><img alt="{{ v.photo.description }}" src="{{ v.photo.get_thumbnail_url }}" %}></a> 
-                </div>
-                <div >
-                  <p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} <br> <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> </p>
-                  <h4>{{ v.title }}</h4>
-                </div>
-            </div>
-        {% endfor %}
-    
-    </div><!-- sidebar-->
-  
-    </div><!-- container-row-->
-  </div> <!-- container-fluid-->
 {% endblock gallery %}
 
