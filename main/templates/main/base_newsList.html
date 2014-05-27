@@ -17,17 +17,17 @@
 {% block parts %} 
       	{% for v in newsList%}
       		<div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-10 ">
           		<div class="thumbnail">
               		<img alt="{{ v.photo.description }}" src="{{ v.photo.get_gallerysize_url }}">
               </div>
             </div>
-            <div class="blog col-lg-10">
+            <div class="col-lg-10">
               <div lass="blogtags">
-                <p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+                <h4><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></h4>
               </div>
               <h1> <a href={% url 'main:news' v.id %}>{{ v.title }}</a></h1><hr>
-              <p>{{ v.description }}</p>
+              <h4>{{ v.description }}</h4>
               <hr>
             </div>
       		</div>

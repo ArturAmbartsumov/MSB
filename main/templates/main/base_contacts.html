@@ -13,12 +13,14 @@
 			</div>
 			<div class="col-md-10" style="height:500px">
 				<div class ="row infoblock">
-					{% for v in contacts.addresses.all %}
-						<h1> {{ v.address }} </h1>
-					{% endfor %}
+					<p>{{ contacts.title }}</p>
 				</div>
 				<div class="row infoblock">
-					<p>{{ contacts.contact_information }}</p>
+
+					{% autoescape off %}
+						<p>{{ contacts.bank_details }}</p>
+					{% endautoescape %}
+					
 					<hr>
 					{% for v in contacts.phone_number.all %}
 						<p>{{ v.phone_number }}</p>
@@ -26,6 +28,10 @@
 					<hr>
 					{% for v in contacts.emails.all %}
 						<h1> {{ v.email }} </h1>
+					{% endfor %}
+					<hr>
+					{% for v in contacts.addresses.all %}
+						<h1> {{ v.address }} </h1>
 					{% endfor %}
 				</div>
 			</div>

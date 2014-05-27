@@ -43,59 +43,73 @@
 	{% endblock caruosel %}
 
 {% block hello %} 
+  <div class="container">
+    {% autoescape off %}
+      <h3> {{ department.content }}</h3>
+    {% endautoescape %}
+  </div> 
 {% endblock hello %}
 
 {% block parts %}
-	{% if articlesList%}
 
-		  <div class="brand">
+{% if projectsList %} 
+  <div class="container">
+    <div class="brand">
             <div class="container-fluid">
-            	<h1 class="brandHeader">Статьи</h1> 
+              <h1 class="brandHeader">Проекты</h1> 
             </div>
-  			</div>
+    </div>
+<!-- Keep all page content within the page-content inset div! -->
+  <div class="row gallery">
+    {% for v in projectsList %}
+      <div class="row">
+          <hr>
+          <div class="col-lg-7 col-md-5 col-sm-10 thumbnail">
+            <a href={% url 'main:article' v.short_name %}><img alt="{{ v.photo.description }}" src="{{ v.photo.get_gallerysize_url }}" %}></a> 
+          </div>
+          <div class="col-lg-13 col-xs-15">
+            <h1>{{ v.name }}</h1>
+            {% autoescape off %}
+              <p> {{ v.description }}</p>
+            {% endautoescape %}
+            <a href={% url 'main:project' v.short_name %} class="btn btn-info" role="button">Узнать больше</a>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+ <hr>
+</div>
+  {% endif %}
+ 
+{% endblock parts %} 	
 
-		{% for v in articlesList%}
-          	<div class="row">
-            	<hr>
-              	<div class="col-lg-8 col-md-5 col-sm-10 thumbnail">
-                	<a href={% url 'main:article' v.short_name %}><img alt="{{ v.photo.description }}" src="{{ v.photo.get_blogsize_url }}" %}></a> 
-              	</div>
-              	<div class="col-lg-12 col-xs-15">
+{% block gallery %}
+  {% if articlesList%}
+
+      <div class="brand">
+            <div class="container-fluid">
+              <h1 class="brandHeader">Статьи</h1> 
+            </div>
+        </div>
+
+    {% for v in articlesList%}
+            <div class="row">
+              <hr>
+                <div class="col-lg-8 col-md-5 col-sm-10 thumbnail">
+                  <a href={% url 'main:article' v.short_name %}><img alt="{{ v.photo.description }}" src="{{ v.photo.get_blogsize_url }}" %}></a> 
+                </div>
+                <div class="col-lg-12 col-xs-15">
                <p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} </p>
-                	<h1>{{ v.title }}</h1>
-                	{% autoescape off %}<p> {{ v.description }}</p>{% endautoescape %}
-              		<a href={% url 'main:article' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
-              	</div>
+                  <h1>{{ v.title }}</h1>
+                  {% autoescape off %}<p> {{ v.description }}</p>{% endautoescape %}
+                  <a href={% url 'main:article' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
+                </div>
             </div>
         {% endfor %}
   {% endif %}
-  <hr>
-{% endblock parts %} 	
 
-{% block gallery %} 
-    <div class="brand">
-            <div class="container-fluid">
-            	<h1 class="brandHeader">Проекты</h1> 
-            </div>
-  	</div>
+  
 
-            <!-- Keep all page content within the page-content inset div! -->
-
-  <div class="row gallery">
-    {% for v in projectsList %}
-      <div class="col-sm-4 imgItem">
-        <a href={% url 'main:project' v.short_name %}>
-        <div class="projectsGallerie_project thumbnail">
-            <img src="{{ v.photo.get_gallerysize_url }}"/>
-            <div class="projectsGallerie_project_text">
-              <h1>{{ v.name }}</h1>
-              <div>{{ v.department.name}}</div>
-            </div>
-        </div>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
 {% endblock gallery %}
 
 
