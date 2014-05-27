@@ -86,8 +86,12 @@
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-10">
           <div class="col-lg-10 col-md-10 col-sm-10 ">
-          <h4>{{ contacts.contact_information }} <span class="glyphicon glyphicon-send"></span></h4>
-            <h4>{{ contacts.phone_number }}</h4>
+          {% for v in contacts.phone_number.all %}
+            <h4>{{ v.phone_number }}</h4>
+          {% endfor %}
+            {% for v in contacts.emails.all %}
+            <h4> {{ v.email }} </h4>
+          {% endfor %}
           </div>
         <div class="ccol-lg-10 col-md-10 col-sm-10 ">
           <h4></h4>
