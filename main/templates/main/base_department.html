@@ -64,7 +64,7 @@
                <p><span class="glyphicon glyphicon-time"></span> {{ v.pub_date }} </p>
                 	<h1>{{ v.title }}</h1>
                 	{% autoescape off %}<p> {{ v.description }}</p>{% endautoescape %}
-              		<a href={% url 'main:department' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
+              		<a href={% url 'main:article' v.short_name %} class="btn btn-info" role="button">Узанать больше</a>
               	</div>
             </div>
         {% endfor %}
