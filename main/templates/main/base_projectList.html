@@ -22,10 +22,12 @@
           <h2>{{ v.name }}</h2>  
           <hr>
         </div>
-        <div class="col-sm-2"><img alt="{{ v.photo.description }}" src="{{ v.photo.get_thumbnail_url }}"></div>
+        <div class="col-sm-2">
+          <a href={% url 'main:project' v.short_name %}><img alt="{{ v.photo.description }}" src="{{ v.photo.get_thumbnail_url }}"></a>
+        </div>
         <div class="col-sm-17 col-sm-offset-1">
-          <h4>{{ v.description }}</h4>
-          <p> <button class="btn btn-default">Узнать больше</button></p>
+          <h4>{{ v.description }}</a></h4>
+          <p> <a class="btn btn-info" href={% url 'main:project' v.short_name %}>Узнать больше</a></p>
         </div>
       </div>
       <hr>
