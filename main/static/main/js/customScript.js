@@ -5,7 +5,7 @@ function showText(){
 }
 
 function hideText(){
-	textDiv = $('.projectsGallerie_project_text', this).slideUp('fast');
+  textDiv = $('.projectsGallerie_project_text', this).slideUp('fast');
 }
 
 /*------------------------------------------Progect-Carousell-Many-Items------------------------
@@ -26,3 +26,5 @@ $('.carousel[data-type="multi"] .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });*/
+
+
