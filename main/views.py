@@ -10,11 +10,12 @@ def index(request):
 	projectsList = Projects.objects.filter(isFavorite = True)[:10]
 	memorandum = get_object_or_404(Articles, short_name__iexact = 'memorandum')
 	gallery = get_object_or_404(Gallery, slug__iexact = 'main_page')
+	g = gallery.latest(limit=3, public=True)
 	context = {
 		'isIndex': True,
 		'newsList': newsList,
 		'projectsList': projectsList,
-		'gallery': gallery,
+		'gallery': g,
 		'memorandum': memorandum
 	}
 	context.update(getDefaultContext(request))

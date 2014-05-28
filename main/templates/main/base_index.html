@@ -12,13 +12,15 @@
         {% endfor %}
       </ol>
       <div class="carousel-inner">
-       {% for v in newsList %}
+       {% for v in gallery %}
             <div class="item {% if forloop.counter0 = 0 %} active {% endif %}">
-              <img src="{{ v.photo.get_carouselsize_url }}" alt="{{ v.title }}" width='100%'>
+              <img src="{{ v.get_carouselsize_url }}" alt="{{ v.title }}" width='100%'>
               <div class="container">
                 <div class="carousel-caption">
                   <h1>{{ v.title }}</h1>
-                  <p>{{ v.description }}</p>
+                  {% autoescape off %}
+              <p> {{ v.caption }}</p>
+            {% endautoescape %}
                   <p><a class="btn btn-lg btn-info" href={% url 'main:news' v.id %} role="button">Читать далее</a></p>
                 </div>
               </div>
