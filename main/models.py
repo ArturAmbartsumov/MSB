@@ -60,6 +60,9 @@ class News(models.Model):
 	def __unicode__(self):
 		return self.title
 
+	def getPubDate(self):
+		return self.pub_date.strftime("%Y.%m.%d %H:%M:%S")
+
 class AboutBMSTU(models.Model):
 	title = models.CharField(max_length=250)
 	photo = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
