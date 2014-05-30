@@ -180,3 +180,9 @@ h4 .label-arrow-left:before {
 .label-info.label-arrow:before {
     border-right-color:#5bc0de;
 }
+
+/*------------------------------------------Google-map------------------------*/
+/*------------------------------------------Кастыль который надо удалить!------------------------*/
+.google-map {
+  padding-top: 45px;
+}
