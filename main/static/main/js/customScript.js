@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('#fixed-menu').hide();
+});
+
 $('.projectsGallerie_project').hover(showText, hideText);
 
 function showText(){
