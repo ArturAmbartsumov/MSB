@@ -26,7 +26,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href={% url 'main:index'%}><strong>Мeждународное Содружество Бауманцев</strong></a>
+		          <a class="navbar-brand hidden-sm" href={% url 'main:index'%}><strong>Мeждународное Содружество Бауманцев</strong></a>
 		        </div>
 		        <div class="collapse navbar-collapse">
 		          <ul class="nav navbar-nav navbar-right">
@@ -74,10 +74,7 @@
 
 		{% block gallery %} {% endblock gallery %}
 		
-		{% block footer%}
-      <div class="brand "> 
-        <h1 class="brandHeader">контакты</h1> <hr>
-      </div>  
+		{% block footer%} 
       <div class="brand-footer row"><hr>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-0">
         </div>

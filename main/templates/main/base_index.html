@@ -37,10 +37,10 @@
 {% block hello %}   
   <div class="row brand">
       <h1 class="brandHeader">Международное Содружество бауманцев</h1>
-        <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+        <div class="col-lg-6 col-md-6 col-sm-7 hidden-xs col-xs-offset-2 thumbnail">
 					<img alt="..." src="{{ memorandum.photo.get_blogsize_url }}">
         </div>
-        <div class="col-lg-10  col-md-8 col-sm-8 ">
+        <div class="col-lg-12 col-md-12 col-sm-10 ">
           {% autoescape off %}<p> {{ memorandum.description }}<p>{% endautoescape %}<hr>
           <p align="center"><a class="btn btn-lg btn-default" href={% url 'main:article' 'memorandum' %}>Читать далее</a></p>
         </div>
@@ -63,6 +63,8 @@
             </div>
           </div>
         </div>
+        {% if forloop.counter0 = 1 %} <div class="clearfix visible-sm visible-md"></div> {% endif %}
+        {% if forloop.counter0 = 3 %} <div class="clearfix visible-lg"></div> {% endif %}
       {% endfor %}
     </div>    
 {% endblock parts %} 	
