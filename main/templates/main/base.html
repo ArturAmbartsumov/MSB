@@ -16,7 +16,7 @@
 	<div class="container-fluid" style="height: 100%">
 
 		{% block menu%}         
-		  <div class="container">
+		  <div id="fixed-menu" class="container">
 		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		      <div class="container-fluid">
 		        <div class="navbar-header">
@@ -60,8 +60,8 @@
 
 
 
-     <!-- <div class="container hidden-lg">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <div id="trensperent-menu" class="container">
+        <nav class="navbar navbar-inverse" role="navigation">
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -95,12 +95,12 @@
 
                  <li class="{% if isContacts %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>
                 <!--<li><a href="{% if isProjectList %}active{% endif %}"><a href={% url 'main:contacts'%}>Контакты</a></li>-->
-                <!--<li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#SignInModal"> Присоединяйся</a></li>
               </ul>
             </div>
           </div>
         </nav>      
-      </div> -->
+      </div>
 		{% endblock menu %}
 
 		{% block caruosel %} {% endblock caruosel%}
