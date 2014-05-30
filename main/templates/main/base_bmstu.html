@@ -22,20 +22,20 @@
 {% block hello %}
   <div class="row brand">
       <h1 class="brandHeader">{{ bmstu.history_title }}</h1>
-        <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+        <div class="col-lg-7 col-md-5 col-sm-18 col-xs-18 col-xs-offset-2 thumbnail">
 					<img alt="..." src="{{ bmstu.history_photo.get_blogsize_url }}">
         </div>
-        <div class="col-lg-10  col-md-8 col-sm-8 ">
+        <div class="col-lg-11 col-md-13 col-sm-20 ">
           {% autoescape off %}<p> {{ bmstu.history_text }}<p>{% endautoescape %}<hr>
         </div>
     </div>
 
     <div class="row brand">
       <h1 class="brandHeader">{{ bmstu.facts_title }}</h1>
-        <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+        <div class="col-lg-7 col-md-5 col-sm-18 col-xs-18 col-xs-offset-2 thumbnail">
 					<img alt="..." src="{{ bmstu.facts_photo.get_blogsize_url }}">
         </div>
-        <div class="col-lg-10  col-md-8 col-sm-8 ">
+        <div class="col-lg-11 col-md-13 col-sm-20">
           {% autoescape off %}<p> {{ bmstu.facts_text }}<p>{% endautoescape %}<hr>
         </div>
     </div>
@@ -46,10 +46,10 @@
     <h1 class="brandHeader">{{ bmstu.tradition_title }}</h1>
   </div>  
     <div class="row">
-      <div class="col-lg-7 col-md-10 col-sm-10  col-xs-offset-2 thumbnail">
+      <div class="col-lg-7 col-md-5 col-sm-18 col-xs-18 col-xs-offset-2 thumbnail">
           <img alt="..." src="{{ bmstu.tradition_photo.get_blogsize_url }}">
         </div>
-        <div class="col-lg-10  col-md-8 col-sm-8 ">
+        <div class="col-lg-11 col-md-13 col-sm-20">
           {% autoescape off %}<p> {{ bmstu.tradition_text }}<p>{% endautoescape %}<hr>
         </div>
     </div> 

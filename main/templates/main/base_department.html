@@ -4,32 +4,12 @@
 
 {% block title %} {{ department.name }} {% endblock title %}
 
-   <div class="row ">
-	      <div id="myCarousel" class="carousel slide" data-ride="carousel"  align="center">
-	      <!-- Indicators -->
-	      <div class="carousel-inner">       
-	            <div class="active">
-	              <img src="{{ department.photo.get_carouselsize_url }}" alt="{{ department.title }}" width='100%'>
-	              <div class="container">
-	                <div class="carousel-caption deps">
-	                  <h1>{{ department.name }}</h1>
-	                  <p>{{ department.description }}</p>
-	                </div>
-	              </div>
-	            </div>
-	      
-	      </div>
-	    </div>
-    <!-- /.carousel -->
-
-
-	{% block caruosel %}
-    
+{% block caruosel %}    
 		<div class='row'>
-			<div class="col-md-10">				
-				<div class="thumbnail" >
-					<img alt="{{ department.photo.Caption }}"  src="{{ department.photo.get_blogsize_url }}">
-				</div>				
+			<div class="col-md-10" >		
+				  <div class="thumbnail" >
+					 <img alt="{{ department.photo.Caption }}"  src="{{ department.photo.get_blogsize_url }}">
+				  </div>			
 			</div>
 			<div class="col-md-10" style="height:500px">
 				<div class ="row infoblock">
@@ -40,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-	{% endblock caruosel %}
+{% endblock caruosel %}
 
 {% block hello %} 
   <div class="container">
