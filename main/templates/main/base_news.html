@@ -12,7 +12,7 @@
 
 {% block hello %} 
 <div lass="blogtags">
-  <p><span class="glyphicon glyphicon-time"></span> {{ news.pub_date }} | <span class="glyphicon glyphicon-comment"></span> <a href=#>Comments</a> | <span class="glyphicon glyphicon-user"></span> <a href=#>Autor</a></p>
+  <p><span class="glyphicon glyphicon-time"></span> {{ news.pub_date }}
 </div>
 <div class="thumbnail">
   <img alt="{{ news.photo.description }}" src="{{ news.photo.get_blogsize_url }}" %}>
@@ -20,7 +20,6 @@
 <div class='blog'>
   {% autoescape off %} <p>{{ news.content }}</p> {% endautoescape %}
 </div>
-  <p><span class="glyphicon glyphicon-tags"></span> <a href=#>tag1</a> | <a href=#>tag2</a> |</p> 
   <hr>
 </div><!-- col-lg-12-->
 {% endblock hello %}
