@@ -1,6 +1,6 @@
-$(document).ready(function(){
-    $('#fixed-menu').hide();
-});
+//$(document).ready(function(){
+//    $('#fixed-menu').hide();
+//});
 
 $('.projectsGallerie_project').hover(showText, hideText);
 
@@ -12,7 +12,7 @@ function hideText(){
   textDiv = $('.projectsGallerie_project_text', this).slideUp('fast');
 }
 
-$(window).scroll(function(){
+/*$(window).scroll(function(){
     var windowpos = $(window).scrollTop();
     if(windowpos > 50) {
         $('#trensperent-menu').hide();
@@ -21,6 +21,6 @@ $(window).scroll(function(){
         $('#fixed-menu').hide();
         $('#trensperent-menu').show();
     }
-});
+});*/
 
 
