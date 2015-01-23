@@ -405,3 +405,14 @@ Traceback (most recent call last):
     raise ImproperlyConfigured("Error loading MySQLdb module: %s" % e)
 django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: No module named MySQLdb
 [pid: 8594|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 703 bytes} [Tue May 20 07:21:40 2014] GET / => generated 0 bytes in 189 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 5 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/artur/MSB
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 3 mapped to socket 0 (127.0.0.1:8002)
+running /usr/local/bin/uwsgi
